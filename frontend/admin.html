@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Dashboard — OGTOX</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500;600;700&family=Barlow+Condensed:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+body { background: var(--black); }
+
+/* ── ADMIN LAYOUT ── */
+.admin-wrap { display: flex; min-height: 100vh; padding-top: 60px; }
+
+/* SIDEBAR */
+.sidebar {
+  width: 240px; flex-shrink: 0;
+  background: var(--dark); border-right: 1px solid var(--border);
+  position: fixed; top: 60px; bottom: 0; left: 0;
+  overflow-y: auto; z-index: 50;
+  display: flex; flex-direction: column;
+}
+.sidebar-brand {
+  padding: 20px 20px 16px;
+  border-bottom: 1px solid var(--border);
+}
+.sidebar-brand .admin-badge {
+  display: inline-flex; align-items: center; gap: 6px; margin-top: 6px;
+  background: rgba(229,0,27,.1); border: 1px solid rgba(229,0,27,.25);
+  padding: 3px 10px;
+  font-family: var(--font-c); font-size: 10px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--red);
+}
+.sidebar-nav { padding: 16px 0; flex: 1; }
+.sidebar-section { padding: 6px 20px 4px; font-family: var(--font-c); font-size: 10px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: #444; margin-top: 8px; }
+.sidebar-link {
+  display: flex; align-items: center; gap: 10px;
+  padding: 10px 20px; color: var(--muted);
+  font-family: var(--font-c); font-size: 13px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+  transition: all .2s; border-left: 3px solid transparent; cursor: pointer;
+}
+.sidebar-link:hover { color: var(--white); background: rgba(255,255,255,.03); }
+.sidebar-link.active { color: var(--white); border-left-color: var(--red); background: rgba(229,0,27,.06); }
+.sidebar-link svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 1.5; flex-shrink: 0; }
+.sidebar-link .badge { margin-left: auto; background: var(--red); color: #fff; font-size: 10px; padding: 2px 7px; border-radius: 10px; }
+.sidebar-bottom { padding: 16px 20px; border-top: 1px solid var(--border); }
+.sidebar-user { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+.su-avatar { width: 36px; height: 36px; background: var(--red); display: flex; align-items: center; justify-content: center; font-family: var(--font-d); font-size: 18px; flex-shrink: 0; }
+.su-name { font-family: var(--font-c); font-size: 13px; font-weight: 700; }
+.su-role { font-size: 11px; color: var(--red); }
+.btn-logout { width: 100%; background: transparent; border: 1px solid var(--border); color: var(--muted); padding: 8px; font-family: var(--font-c); font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; transition: all .2s; }
+.btn-logout:hover { border-color: var(--red); color: var(--red); }
+
+/* MAIN */
+.admin-main { flex: 1; margin-left: 240px; padding: 32px 28px; }
+.page-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 28px; flex-wrap: wrap; gap: 12px; }
+.page-title { font-family: var(--font-d); font-size: 36px; letter-spacing: 2px; }
+.page-sub { font-size: 13px; color: var(--muted); margin-top: 2px; }
+
+/* STATS ROW */
+.stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 28px; }
+.stat-card { background: var(--card); border: 1px solid var(--border); padding: 20px; position: relative; overflow: hidden; }
+.stat-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--red); }
+.stat-card.green::before { background: var(--green); }
+.stat-card.gold::before { background: var(--gold); }
+.stat-card.blue::before { background: #3b82f6; }
+.stat-icon { width: 36px; height: 36px; background: rgba(229,0,27,.1); display: flex; align-items: center; justify-content: center; margin-bottom: 12px; }
+.stat-icon svg { width: 18px; height: 18px; stroke: var(--red); fill: none; stroke-width: 1.5; }
+.stat-card.green .stat-icon { background: rgba(34,197,94,.1); }
+.stat-card.green .stat-icon svg { stroke: var(--green); }
+.stat-card.gold .stat-icon { background: rgba(201,168,76,.1); }
+.stat-card.gold .stat-icon svg { stroke: var(--gold); }
+.stat-card.blue .stat-icon { background: rgba(59,130,246,.1); }
+.stat-card.blue .stat-icon svg { stroke: #3b82f6; }
+.stat-val { font-family: var(--font-d); font-size: 32px; letter-spacing: 1px; margin-bottom: 4px; }
+.stat-lbl { font-family: var(--font-c); font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); }
+.stat-change { font-size: 12px; color: var(--green); margin-top: 6px; }
+
+/* PANELS */
+.panel { background: var(--card); border: 1px solid var(--border); margin-bottom: 20px; }
+.panel-head { display: flex; align-items: center; justify-content: space-between; padding: 16px 20px; border-bottom: 1px solid var(--border); }
+.panel-title { font-family: var(--font-c); font-size: 14px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; }
+.panel-body { padding: 0; }
+.panel-section { display: none; }
+.panel-section.active { display: block; }
+
+/* TABLE */
+.data-table { width: 100%; border-collapse: collapse; }
+.data-table th { font-family: var(--font-c); font-size: 10px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); padding: 12px 16px; text-align: left; border-bottom: 1px solid var(--border); background: rgba(255,255,255,.02); }
+.data-table td { padding: 14px 16px; font-size: 13px; border-bottom: 1px solid rgba(255,255,255,.04); vertical-align: middle; }
+.data-table tr:last-child td { border-bottom: none; }
+.data-table tr:hover td { background: rgba(255,255,255,.02); }
+.order-id { font-family: var(--font-c); font-size: 11px; font-weight: 700; color: var(--muted); }
+.buyer-name { font-weight: 600; }
+.buyer-email { font-size: 12px; color: var(--muted); margin-top: 2px; }
+.order-items { font-size: 12px; color: var(--muted); }
+.order-price { font-family: var(--font-d); font-size: 18px; color: var(--gold); }
+.order-date { font-size: 12px; color: var(--muted); }
+.status-badge { display: inline-block; padding: 3px 10px; font-family: var(--font-c); font-size: 10px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; }
+.status-paid { background: rgba(34,197,94,.15); color: var(--green); border: 1px solid rgba(34,197,94,.3); }
+.status-pending { background: rgba(201,168,76,.15); color: var(--gold); border: 1px solid rgba(201,168,76,.3); }
+.status-shipped { background: rgba(59,130,246,.15); color: #60a5fa; border: 1px solid rgba(59,130,246,.3); }
+.status-delivered { background: rgba(34,197,94,.2); color: #4ade80; border: 1px solid rgba(34,197,94,.4); }
+.status-cancelled { background: rgba(229,0,27,.1); color: #f87171; border: 1px solid rgba(229,0,27,.3); }
+.td-actions { display: flex; gap: 6px; }
+.btn-tbl { background: transparent; border: 1px solid var(--border); color: var(--muted); padding: 5px 10px; font-family: var(--font-c); font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; transition: all .2s; }
+.btn-tbl:hover { border-color: var(--white); color: var(--white); }
+.btn-tbl.danger:hover { border-color: var(--red); color: var(--red); }
+
+/* PRODUCT FORM */
+.add-product-form { padding: 24px 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.add-product-form .field { display: flex; flex-direction: column; gap: 6px; }
+.add-product-form .field.full { grid-column: 1 / -1; }
+.add-product-form label { font-family: var(--font-c); font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); }
+.add-product-form input, .add-product-form select, .add-product-form textarea {
+  background: var(--dark); border: 1px solid var(--border);
+  color: var(--white); padding: 11px 14px; font-size: 14px; outline: none; transition: border-color .2s;
+}
+.add-product-form input:focus, .add-product-form select:focus, .add-product-form textarea:focus { border-color: var(--red); }
+.add-product-form select option { background: var(--dark); }
+.form-actions { grid-column: 1 / -1; display: flex; gap: 10px; }
+.btn-save { background: var(--red); color: #fff; padding: 12px 28px; font-family: var(--font-c); font-size: 13px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; transition: background .2s; }
+.btn-save:hover { background: var(--red2); }
+.btn-reset { background: transparent; border: 1px solid var(--border); color: var(--muted); padding: 12px 24px; font-family: var(--font-c); font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; transition: all .2s; }
+.btn-reset:hover { border-color: var(--white); color: var(--white); }
+
+/* ORDER DETAIL MODAL */
+.modal-bg { position: fixed; inset: 0; background: rgba(0,0,0,.8); z-index: 300; display: none; align-items: center; justify-content: center; padding: 20px; }
+.modal-bg.open { display: flex; }
+.modal { background: var(--dark); border: 1px solid var(--border); width: 100%; max-width: 600px; max-height: 85vh; overflow-y: auto; }
+.modal-head { display: flex; align-items: center; justify-content: space-between; padding: 18px 20px; border-bottom: 1px solid var(--border); }
+.modal-title { font-family: var(--font-d); font-size: 22px; letter-spacing: 2px; }
+.modal-close { background: none; border: 1px solid var(--border); color: var(--muted); width: 32px; height: 32px; font-size: 14px; transition: all .2s; }
+.modal-close:hover { border-color: var(--white); color: var(--white); }
+.modal-body { padding: 20px; }
+.modal-section { margin-bottom: 20px; }
+.modal-section-title { font-family: var(--font-c); font-size: 11px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; color: var(--red); margin-bottom: 12px; }
+.modal-row { display: flex; justify-content: space-between; font-size: 13px; padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,.04); }
+.modal-row .label { color: var(--muted); }
+.modal-item { display: flex; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--border); }
+.mi-info .mi-name { font-size: 13px; font-weight: 600; }
+.mi-info .mi-brand { font-family: var(--font-c); font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--red); margin-bottom: 3px; }
+.mi-info .mi-price { font-family: var(--font-d); font-size: 16px; color: var(--gold); }
+.status-select { background: var(--card); border: 1px solid var(--border); color: var(--white); padding: 8px 12px; font-family: var(--font-c); font-size: 12px; font-weight: 700; width: 100%; margin-bottom: 8px; outline: none; }
+.tracking-input { background: var(--card); border: 1px solid var(--border); color: var(--white); padding: 8px 12px; font-size: 13px; width: 100%; margin-bottom: 12px; outline: none; }
+.tracking-input:focus { border-color: var(--red); }
+
+/* EMPTY STATE */
+.empty-state { padding: 48px; text-align: center; color: var(--muted); }
+.empty-state svg { width: 48px; height: 48px; stroke: #333; fill: none; stroke-width: 1; margin: 0 auto 16px; }
+
+/* NOTIFICATION BANNER */
+.notif-banner {
+  background: rgba(34,197,94,.1); border: 1px solid rgba(34,197,94,.3);
+  padding: 12px 16px; margin-bottom: 20px;
+  display: flex; align-items: center; gap: 10px;
+  font-size: 13px; color: var(--green);
+}
+.notif-banner svg { width: 16px; height: 16px; stroke: var(--green); fill: none; stroke-width: 2; flex-shrink: 0; }
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .sidebar { transform: translateX(-100%); transition: transform .3s; }
+  .sidebar.open { transform: translateX(0); }
+  .admin-main { margin-left: 0; padding: 20px 16px; }
+  .stats-row { grid-template-columns: 1fr 1fr; }
+  .add-product-form { grid-template-columns: 1fr; }
+  .add-product-form .field.full { grid-column: 1; }
+}
+@media (max-width: 480px) { .stats-row { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<nav id="mainNav">
+  <a class="logo" href="index.html">
+    <svg class="logo-flag" viewBox="0 0 36 36" fill="none">
+      <rect width="36" height="36" rx="4" fill="#111"/>
+      <rect x="4" y="4" width="6" height="6" fill="#fff"/><rect x="10" y="4" width="6" height="6" fill="#e5001b"/>
+      <rect x="16" y="4" width="6" height="6" fill="#fff"/><rect x="22" y="4" width="6" height="6" fill="#e5001b"/>
+      <rect x="4" y="10" width="6" height="6" fill="#e5001b"/><rect x="10" y="10" width="6" height="6" fill="#fff"/>
+      <rect x="16" y="10" width="6" height="6" fill="#e5001b"/><rect x="22" y="10" width="6" height="6" fill="#fff"/>
+      <rect x="4" y="16" width="6" height="6" fill="#fff"/><rect x="10" y="16" width="6" height="6" fill="#e5001b"/>
+      <rect x="16" y="16" width="6" height="6" fill="#fff"/><rect x="22" y="16" width="6" height="6" fill="#e5001b"/>
+      <rect x="30" y="4" width="3" height="28" rx="1" fill="#e5001b"/>
+    </svg>
+    <span class="logo-text">OG<span>TOX</span></span>
+  </a>
+  <div class="nav-right">
+    <span style="font-family:var(--font-c);font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--red);border:1px solid rgba(229,0,27,.3);padding:4px 12px">ADMIN PANEL</span>
+    <a href="index.html" class="btn-login-nav" style="display:flex">View Shop</a>
+  </div>
+</nav>
+
+<div class="admin-wrap">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-brand">
+      <div style="font-family:var(--font-d);font-size:20px;letter-spacing:2px">OGTOX <span style="color:var(--red)">ADMIN</span></div>
+      <div class="admin-badge">🏁 Admin Access</div>
+    </div>
+    <nav class="sidebar-nav">
+      <div class="sidebar-section">Overview</div>
+      <div class="sidebar-link active" onclick="showSection('dashboard')">
+        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        Dashboard
+      </div>
+      <div class="sidebar-section">Orders</div>
+      <div class="sidebar-link" onclick="showSection('orders')">
+        <svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+        All Orders
+        <span class="badge" id="ordBadge">3</span>
+      </div>
+      <div class="sidebar-section">Inventory</div>
+      <div class="sidebar-link" onclick="showSection('products')">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        Products
+      </div>
+      <div class="sidebar-link" onclick="showSection('add-product')">
+        <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        Add Product
+      </div>
+      <div class="sidebar-section">Users</div>
+      <div class="sidebar-link" onclick="showSection('buyers')">
+        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        Buyers
+      </div>
+    </nav>
+    <div class="sidebar-bottom">
+      <div class="sidebar-user">
+        <div class="su-avatar">O</div>
+        <div><div class="su-name">OGTOX</div><div class="su-role">Administrator</div></div>
+      </div>
+      <button class="btn-logout" onclick="logout()">Logout</button>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="admin-main">
+
+    <!-- DASHBOARD -->
+    <div class="panel-section active" id="sec-dashboard">
+      <div class="page-header">
+        <div>
+          <div class="page-title">DASHBOARD</div>
+          <div class="page-sub">Welcome back, OGTOX — here's what's happening today.</div>
+        </div>
+        <button class="btn-primary" onclick="showSection('add-product')">+ Add Product</button>
+      </div>
+
+      <div class="notif-banner">
+        <svg viewBox="0 0 24 24"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        3 new orders need your attention — <a href="#" onclick="showSection('orders')" style="color:var(--green);font-weight:700;margin-left:4px">View Orders →</a>
+      </div>
+
+      <div class="stats-row">
+        <div class="stat-card">
+          <div class="stat-icon"><svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div>
+          <div class="stat-val" id="stOrders">—</div>
+          <div class="stat-lbl">Total Orders</div>
+          <div class="stat-change">↑ 3 new today</div>
+        </div>
+        <div class="stat-card green">
+          <div class="stat-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+          <div class="stat-val" id="stRevenue">—</div>
+          <div class="stat-lbl">Revenue</div>
+          <div class="stat-change">↑ This month</div>
+        </div>
+        <div class="stat-card gold">
+          <div class="stat-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+          <div class="stat-val" id="stProducts">14</div>
+          <div class="stat-lbl">Products Listed</div>
+        </div>
+        <div class="stat-card blue">
+          <div class="stat-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div>
+          <div class="stat-val" id="stBuyers">—</div>
+          <div class="stat-lbl">Registered Buyers</div>
+        </div>
+      </div>
+
+      <!-- Recent orders preview -->
+      <div class="panel">
+        <div class="panel-head">
+          <div class="panel-title">Recent Orders</div>
+          <button class="btn-tbl" onclick="showSection('orders')">View All →</button>
+        </div>
+        <div class="panel-body">
+          <table class="data-table" id="recentOrdersTable">
+            <thead><tr>
+              <th>Order ID</th><th>Buyer</th><th>Items</th><th>Total</th><th>Status</th><th>Date</th><th>Action</th>
+            </tr></thead>
+            <tbody id="recentOrdersTbody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- ORDERS -->
+    <div class="panel-section" id="sec-orders">
+      <div class="page-header">
+        <div>
+          <div class="page-title">ALL ORDERS</div>
+          <div class="page-sub">Every order placed by buyers — click to view details and update status.</div>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="panel-head">
+          <div class="panel-title">Orders</div>
+          <select id="orderFilter" onchange="renderOrders()" style="background:var(--dark);border:1px solid var(--border);color:var(--white);padding:6px 10px;font-family:var(--font-c);font-size:11px;font-weight:700;outline:none">
+            <option value="">All Status</option>
+            <option value="pending">Pending</option>
+            <option value="paid">Paid</option>
+            <option value="shipped">Shipped</option>
+            <option value="delivered">Delivered</option>
+            <option value="cancelled">Cancelled</option>
+          </select>
+        </div>
+        <div class="panel-body">
+          <table class="data-table">
+            <thead><tr>
+              <th>Order ID</th><th>Buyer</th><th>Items</th><th>Total</th><th>Status</th><th>Date</th><th>Actions</th>
+            </tr></thead>
+            <tbody id="allOrdersTbody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRODUCTS -->
+    <div class="panel-section" id="sec-products">
+      <div class="page-header">
+        <div>
+          <div class="page-title">PRODUCTS</div>
+          <div class="page-sub">All listed diecast models.</div>
+        </div>
+        <button class="btn-primary" onclick="showSection('add-product')">+ Add Product</button>
+      </div>
+      <div class="panel">
+        <div class="panel-body">
+          <table class="data-table">
+            <thead><tr><th>Product</th><th>Brand</th><th>Scale</th><th>Price</th><th>Stock</th><th>Actions</th></tr></thead>
+            <tbody id="productsTbody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- ADD PRODUCT -->
+    <div class="panel-section" id="sec-add-product">
+      <div class="page-header">
+        <div>
+          <div class="page-title">ADD PRODUCT</div>
+          <div class="page-sub">List a new diecast model for sale.</div>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="panel-head"><div class="panel-title">Product Details</div></div>
+        <form class="add-product-form" id="addProductForm" onsubmit="handleAddProduct(event)">
+          <div class="field">
+            <label>Product Name *</label>
+            <input type="text" id="pName" placeholder="e.g. Ferrari F40 Heritage Edition" required>
+          </div>
+          <div class="field">
+            <label>Brand *</label>
+            <select id="pBrand" required>
+              <option value="">Select brand</option>
+              <option>Hot Wheels</option>
+              <option>Majorette</option>
+              <option>Matchbox</option>
+              <option>Tomica</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Price (USD) *</label>
+            <input type="number" id="pPrice" placeholder="6.99" step="0.01" min="0" required>
+          </div>
+          <div class="field">
+            <label>Stock Quantity *</label>
+            <input type="number" id="pStock" placeholder="1" min="1" required>
+          </div>
+          <div class="field">
+            <label>Scale</label>
+            <select id="pScale">
+              <option value="1:64">1:64</option>
+              <option value="1:57">1:57</option>
+              <option value="1:43">1:43</option>
+              <option value="1:18">1:18</option>
+              <option value="1:24">1:24</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Condition</label>
+            <select id="pCondition">
+              <option>Mint</option>
+              <option>Near Mint</option>
+              <option>Sealed</option>
+              <option>Used</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Category</label>
+            <select id="pCategory" required>
+              <option value="">Select category</option>
+              <option value="sports">Sports Car</option>
+              <option value="muscle">Muscle Car</option>
+              <option value="jdm">JDM</option>
+              <option value="supercar">Supercar</option>
+              <option value="classic">Classic</option>
+              <option value="limited">Limited Edition</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Badge</label>
+            <select id="pBadge">
+              <option value="">None</option>
+              <option value="new">New</option>
+              <option value="hot">Hot</option>
+              <option value="limited">Limited</option>
+            </select>
+          </div>
+          <div class="field full">
+            <label>Series / Year (optional)</label>
+            <input type="text" id="pSeries" placeholder="e.g. Treasure Hunt 2024">
+          </div>
+          <div class="field full">
+            <label>Description</label>
+            <textarea id="pDesc" rows="3" placeholder="Brief description of the model, special features, why it's worth collecting..."></textarea>
+          </div>
+          <div class="field full">
+            <label>Product Images</label>
+            <input type="file" id="pImages" accept="image/*" multiple style="padding:8px 14px;font-size:13px">
+            <small style="color:var(--muted);font-size:12px;margin-top:4px">Upload up to 5 images. Max 5MB each.</small>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn-save">Save &amp; Publish Product</button>
+            <button type="reset" class="btn-reset">Reset Form</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- BUYERS -->
+    <div class="panel-section" id="sec-buyers">
+      <div class="page-header">
+        <div>
+          <div class="page-title">BUYERS</div>
+          <div class="page-sub">Everyone who has registered on the shop.</div>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="panel-body">
+          <table class="data-table">
+            <thead><tr><th>Name</th><th>Email</th><th>Joined</th><th>Orders</th></tr></thead>
+            <tbody id="buyersTbody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<!-- ORDER DETAIL MODAL -->
+<div class="modal-bg" id="orderModal">
+  <div class="modal">
+    <div class="modal-head">
+      <div class="modal-title">ORDER DETAILS</div>
+      <button class="modal-close" onclick="closeModal()">✕</button>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
+<div class="toast-wrap" id="toastWrap"></div>
+
+<script>
+const API = window.location.hostname==='localhost' ? 'http://localhost:5000/api' : '/api';
+
+/* ── AUTH GUARD ── */
+const token = localStorage.getItem('ogtox_token');
+const user  = JSON.parse(localStorage.getItem('ogtox_user')||'{}');
+// In production: redirect if not admin
+// if(!token || user.role !== 'admin') window.location.href = 'login.html';
+
+function logout(){ localStorage.clear(); window.location.href='login.html'; }
+
+/* ── MOCK DATA (used until backend connected) ── */
+const MOCK_ORDERS = [
+  {_id:'ORD001',buyer:{name:'Rahul Sharma',email:'rahul@gmail.com'},items:[{name:'Ferrari F40',brand:'Hot Wheels',qty:1,price:6.99},{name:'Supra GR',brand:'Majorette',qty:2,price:5.99}],total:18.97,status:'paid',createdAt:'2025-03-15T10:30:00Z',shippingAddress:{street:'12 MG Road',city:'Mumbai',state:'MH',zip:'400001',country:'India',phone:'+91 98765 43210'}},
+  {_id:'ORD002',buyer:{name:'Priya Patel',email:'priya@outlook.com'},items:[{name:'Bugatti Chiron SS',brand:'Hot Wheels',qty:1,price:12.99}],total:12.99,status:'shipped',createdAt:'2025-03-14T14:00:00Z',shippingAddress:{street:'45 Park Street',city:'Delhi',state:'DL',zip:'110001',country:'India',phone:'+91 87654 32100'}},
+  {_id:'ORD003',buyer:{name:'Arjun Mehta',email:'arjun@yahoo.com'},items:[{name:'RLC Special Edition',brand:'Other',qty:1,price:29.99}],total:34.98,status:'pending',createdAt:'2025-03-16T08:15:00Z',shippingAddress:{street:'8 Anna Salai',city:'Chennai',state:'TN',zip:'600001',country:'India',phone:'+91 76543 21000'}},
+];
+const MOCK_PRODUCTS = [
+  {_id:'P001',name:'Ferrari F40 Heritage',brand:'Hot Wheels',scale:'1:64',price:6.99,stock:4,condition:'Mint'},
+  {_id:'P002',name:'Porsche 911 GT3 RS',brand:'Hot Wheels',scale:'1:64',price:8.49,stock:2,condition:'Sealed'},
+  {_id:'P003',name:'Lamborghini Aventador',brand:'Majorette',scale:'1:64',price:5.99,stock:6,condition:'Mint'},
+  {_id:'P004',name:'Toyota GR Supra',brand:'Majorette',scale:'1:64',price:5.99,stock:3,condition:'Mint'},
+  {_id:'P005',name:'Ford Mustang GT500',brand:'Matchbox',scale:'1:64',price:3.99,stock:8,condition:'Mint'},
+  {_id:'P006',name:'Honda NSX Type-R',brand:'Tomica',scale:'1:57',price:9.99,stock:1,condition:'Near Mint'},
+  {_id:'P007',name:'RLC Special Edition',brand:'Other',scale:'1:64',price:29.99,stock:1,condition:'Sealed'},
+];
+const MOCK_BUYERS = [
+  {name:'Rahul Sharma',email:'rahul@gmail.com',joined:'2025-03-01',orders:3},
+  {name:'Priya Patel',email:'priya@outlook.com',joined:'2025-03-10',orders:1},
+  {name:'Arjun Mehta',email:'arjun@yahoo.com',joined:'2025-03-15',orders:2},
+];
+
+/* ── SECTIONS ── */
+function showSection(id){
+  document.querySelectorAll('.panel-section').forEach(s=>s.classList.remove('active'));
+  document.getElementById('sec-'+id).classList.add('active');
+  document.querySelectorAll('.sidebar-link').forEach(l=>l.classList.remove('active'));
+  document.querySelector(`.sidebar-link[onclick*="${id}"]`)?.classList.add('active');
+  if(id==='orders') renderOrders();
+  if(id==='products') renderProducts();
+  if(id==='buyers') renderBuyers();
+}
+
+/* ── DASHBOARD ── */
+function initDashboard(){
+  document.getElementById('stOrders').textContent = MOCK_ORDERS.length;
+  const rev = MOCK_ORDERS.filter(o=>o.status!=='cancelled').reduce((s,o)=>s+o.total,0);
+  document.getElementById('stRevenue').textContent = '$'+rev.toFixed(2);
+  document.getElementById('stProducts').textContent = MOCK_PRODUCTS.length;
+  document.getElementById('stBuyers').textContent = MOCK_BUYERS.length;
+  renderRecentOrders();
+}
+
+function renderRecentOrders(){
+  const tbody = document.getElementById('recentOrdersTbody');
+  tbody.innerHTML = MOCK_ORDERS.slice(0,5).map(o=>orderRow(o)).join('');
+}
+
+function orderRow(o){
+  const date = new Date(o.createdAt).toLocaleDateString('en-IN',{day:'2-digit',month:'short',year:'numeric'});
+  const items = o.items.map(i=>`${i.name} x${i.qty}`).join(', ');
+  return `<tr>
+    <td><div class="order-id">#${o._id}</div></td>
+    <td><div class="buyer-name">${o.buyer.name}</div><div class="buyer-email">${o.buyer.email}</div></td>
+    <td><div class="order-items" title="${items}">${items.length>40?items.substring(0,40)+'...':items}</div></td>
+    <td><div class="order-price">$${o.total.toFixed(2)}</div></td>
+    <td><span class="status-badge status-${o.status}">${o.status}</span></td>
+    <td><div class="order-date">${date}</div></td>
+    <td><div class="td-actions">
+      <button class="btn-tbl" onclick="openOrderModal('${o._id}')">View</button>
+    </div></td>
+  </tr>`;
+}
+
+/* ── ORDERS ── */
+function renderOrders(){
+  const filter = document.getElementById('orderFilter')?.value || '';
+  const orders = filter ? MOCK_ORDERS.filter(o=>o.status===filter) : MOCK_ORDERS;
+  document.getElementById('allOrdersTbody').innerHTML = orders.length
+    ? orders.map(o=>orderRow(o)).join('')
+    : `<tr><td colspan="7"><div class="empty-state"><svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>No orders found</div></td></tr>`;
+}
+
+/* ── PRODUCTS TABLE ── */
+function renderProducts(){
+  document.getElementById('productsTbody').innerHTML = MOCK_PRODUCTS.map(p=>`<tr>
+    <td><div style="font-weight:600">${p.name}</div></td>
+    <td>${p.brand}</td>
+    <td>${p.scale}</td>
+    <td><span style="font-family:var(--font-d);font-size:18px;color:var(--gold)">$${p.price.toFixed(2)}</span></td>
+    <td><span style="color:${p.stock<=1?'var(--red)':p.stock<=3?'var(--gold)':'var(--green)'}">${p.stock} left</span></td>
+    <td><div class="td-actions">
+      <button class="btn-tbl">Edit</button>
+      <button class="btn-tbl danger">Delete</button>
+    </div></td>
+  </tr>`).join('');
+}
+
+/* ── BUYERS TABLE ── */
+function renderBuyers(){
+  document.getElementById('buyersTbody').innerHTML = MOCK_BUYERS.map(b=>`<tr>
+    <td><div style="font-weight:600">${b.name}</div></td>
+    <td>${b.email}</td>
+    <td>${new Date(b.joined).toLocaleDateString('en-IN')}</td>
+    <td>${b.orders} orders</td>
+  </tr>`).join('');
+}
+
+/* ── ORDER MODAL ── */
+function openOrderModal(id){
+  const o = MOCK_ORDERS.find(x=>x._id===id);
+  if(!o) return;
+  const date = new Date(o.createdAt).toLocaleString('en-IN');
+  document.getElementById('modalBody').innerHTML = `
+    <div class="modal-section">
+      <div class="modal-section-title">Buyer Details</div>
+      <div class="modal-row"><span class="label">Name</span><span>${o.buyer.name}</span></div>
+      <div class="modal-row"><span class="label">Email</span><span>${o.buyer.email}</span></div>
+      <div class="modal-row"><span class="label">Phone</span><span>${o.shippingAddress.phone||'—'}</span></div>
+    </div>
+    <div class="modal-section">
+      <div class="modal-section-title">Shipping Address</div>
+      <div class="modal-row"><span class="label">Street</span><span>${o.shippingAddress.street}</span></div>
+      <div class="modal-row"><span class="label">City</span><span>${o.shippingAddress.city}, ${o.shippingAddress.state}</span></div>
+      <div class="modal-row"><span class="label">ZIP</span><span>${o.shippingAddress.zip}</span></div>
+      <div class="modal-row"><span class="label">Country</span><span>${o.shippingAddress.country}</span></div>
+    </div>
+    <div class="modal-section">
+      <div class="modal-section-title">Items Ordered</div>
+      ${o.items.map(i=>`<div class="modal-item">
+        <div class="mi-info">
+          <div class="mi-brand">${i.brand}</div>
+          <div class="mi-name">${i.name} × ${i.qty}</div>
+          <div class="mi-price">$${(i.price*i.qty).toFixed(2)}</div>
+        </div>
+      </div>`).join('')}
+    </div>
+    <div class="modal-section">
+      <div class="modal-row"><span class="label">Subtotal</span><span>$${(o.total-4.99>0?o.total-4.99:o.total).toFixed(2)}</span></div>
+      <div class="modal-row"><span class="label">Shipping</span><span>${o.total>=30?'FREE':'$4.99'}</span></div>
+      <div class="modal-row" style="font-weight:700;border-top:1px solid var(--border);padding-top:10px"><span>Total</span><span style="font-family:var(--font-d);font-size:20px;color:var(--gold)">$${o.total.toFixed(2)}</span></div>
+    </div>
+    <div class="modal-section">
+      <div class="modal-section-title">Update Order Status</div>
+      <select class="status-select" id="statusSel">
+        <option value="pending" ${o.status==='pending'?'selected':''}>Pending</option>
+        <option value="paid" ${o.status==='paid'?'selected':''}>Paid</option>
+        <option value="processing" ${o.status==='processing'?'selected':''}>Processing</option>
+        <option value="shipped" ${o.status==='shipped'?'selected':''}>Shipped</option>
+        <option value="delivered" ${o.status==='delivered'?'selected':''}>Delivered</option>
+        <option value="cancelled" ${o.status==='cancelled'?'selected':''}>Cancelled</option>
+      </select>
+      <input type="text" class="tracking-input" id="trackingIn" placeholder="Tracking number (e.g. DTDC123456789)">
+      <button class="btn-save" onclick="updateStatus('${o._id}')">Update Status &amp; Save</button>
+    </div>`;
+  document.getElementById('orderModal').classList.add('open');
+}
+
+function updateStatus(id){
+  const status = document.getElementById('statusSel').value;
+  const tracking = document.getElementById('trackingIn').value;
+  const o = MOCK_ORDERS.find(x=>x._id===id);
+  if(o){ o.status=status; if(tracking) o.trackingNumber=tracking; }
+  closeModal();
+  renderRecentOrders();
+  renderOrders();
+  toast('Order Updated',`Order #${id} → ${status}`);
+}
+
+function closeModal(){ document.getElementById('orderModal').classList.remove('open'); }
+
+/* ── ADD PRODUCT ── */
+function handleAddProduct(e){
+  e.preventDefault();
+  const name = document.getElementById('pName').value;
+  toast('Product Added!',`"${name}" is now live on the shop.`);
+  e.target.reset();
+  showSection('products');
+}
+
+/* ── TOAST ── */
+function toast(title,msg){
+  const w=document.getElementById('toastWrap');
+  const t=document.createElement('div'); t.className='toast';
+  t.innerHTML=`<div class="toast-title">${title}</div><div class="toast-msg">${msg}</div>`;
+  w.appendChild(t); setTimeout(()=>t.classList.add('show'),10);
+  setTimeout(()=>{ t.classList.remove('show'); setTimeout(()=>t.remove(),350); },3200);
+}
+
+/* ── INIT ── */
+initDashboard();
+</script>
+</body>
+</html>
