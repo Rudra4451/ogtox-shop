@@ -1,361 +1,2906 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="OGTOX Diecast Shop — Premium Hot Wheels, Majorette, Matchbox and rare car models.">
-<title>OGTOX — Diecast Collectibles</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;600;700&family=Barlow+Condensed:wght@600;700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+<!-- ═══════════════════════════════════
+  ISO HUB — Production Build
+  Designed by @prtofno
+═══════════════════════════════════ -->
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 
-<!-- NAV -->
-<nav>
-  <a class="logo" href="index.html">
-    <svg class="logo-flag" viewBox="0 0 32 32" fill="none">
-      <rect width="32" height="32" rx="3" fill="#111"/>
-      <rect x="3" y="3" width="5" height="5" fill="#f0f0f0"/><rect x="8" y="3" width="5" height="5" fill="#e5001b"/>
-      <rect x="13" y="3" width="5" height="5" fill="#f0f0f0"/><rect x="18" y="3" width="5" height="5" fill="#e5001b"/>
-      <rect x="3" y="8" width="5" height="5" fill="#e5001b"/><rect x="8" y="8" width="5" height="5" fill="#f0f0f0"/>
-      <rect x="13" y="8" width="5" height="5" fill="#e5001b"/><rect x="18" y="8" width="5" height="5" fill="#f0f0f0"/>
-      <rect x="3" y="13" width="5" height="5" fill="#f0f0f0"/><rect x="8" y="13" width="5" height="5" fill="#e5001b"/>
-      <rect x="13" y="13" width="5" height="5" fill="#f0f0f0"/><rect x="18" y="13" width="5" height="5" fill="#e5001b"/>
-      <rect x="25" y="3" width="3" height="26" rx="1" fill="#e5001b"/>
-    </svg>
-    <span class="logo-text">OG<span>TOX</span></span>
-  </a>
-  <ul class="nav-links">
-    <li><a href="#shop">Shop</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#how">How It Works</a></li>
-  </ul>
-  <div class="nav-right">
-    <a href="login.html" class="btn-login-nav">Login</a>
-    <button class="btn-cart" onclick="toggleCart()">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39A2 2 0 0 0 9.68 16h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
-      Cart <span class="cart-n" id="cartN">0</span>
-    </button>
-    <button class="hamburger" id="ham" onclick="toggleMenu()">
-      <span></span><span></span><span></span>
-    </button>
+<!-- PRIMARY META -->
+<title>ISO Hub — Download Any OS & Install Guide | Windows, Linux, macOS</title>
+<meta name="description" content="ISO Hub is the #1 resource for downloading official OS ISO files and step-by-step installation guides. Windows 11, Ubuntu, macOS, Linux Mint — all from official sources, completely free."/>
+<meta name="keywords" content="download windows 11 iso, ubuntu download, linux mint iso, macos download, install operating system, bootable usb guide, best linux distro, OS comparison, free operating system, windows 10 iso official"/>
+<meta name="author" content="ISO Hub"/>
+<meta name="robots" content="index, follow"/>
+<meta name="theme-color" content="#020408"/>
+<link rel="canonical" href="https://isohub.dev/"/>
+
+<!-- OPEN GRAPH (Facebook, WhatsApp, LinkedIn) -->
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://isohub.dev/"/>
+<meta property="og:title" content="ISO Hub — Download Any OS & Install Guide"/>
+<meta property="og:description" content="Official ISO downloads + step-by-step install guides for Windows 11, Ubuntu, macOS, Linux Mint and more. 100% official sources. Free forever."/>
+<meta property="og:image" content="https://isohub.dev/og-image.png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:site_name" content="ISO Hub"/>
+<meta property="og:locale" content="en_US"/>
+
+<!-- TWITTER / X CARD -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:site" content="@isohub"/>
+<meta name="twitter:title" content="ISO Hub — Download Any OS & Install Guide"/>
+<meta name="twitter:description" content="Official ISO downloads + step-by-step install guides for Windows, Ubuntu, macOS & Linux. 100% free, 100% official."/>
+<meta name="twitter:image" content="https://isohub.dev/og-image.png"/>
+
+<!-- STRUCTURED DATA / SCHEMA.ORG -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "ISO Hub",
+  "url": "https://isohub.dev",
+  "description": "The definitive source for OS ISO downloads and installation guides.",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://isohub.dev/?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+
+<!-- FONTS -->
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
+
+<!-- FAVICON -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='none' stroke='%2300d4ff' stroke-width='2'/%3E%3Ccircle cx='16' cy='16' r='4' fill='%2300d4ff'/%3E%3Cline x1='16' y1='2' x2='16' y2='8' stroke='%2300d4ff' stroke-width='2' stroke-linecap='round'/%3E%3Cline x1='16' y1='24' x2='16' y2='30' stroke='%2300d4ff' stroke-width='2' stroke-linecap='round'/%3E%3Cline x1='2' y1='16' x2='8' y2='16' stroke='%2300d4ff' stroke-width='2' stroke-linecap='round'/%3E%3Cline x1='24' y1='16' x2='30' y2='16' stroke='%2300d4ff' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E"/>
+
+<style>
+/* ═══════════════════════════════════════════════════
+   DESIGN SYSTEM — TOKENS
+═══════════════════════════════════════════════════ */
+:root {
+  /* Background scale */
+  --bg-base:    #020408;
+  --bg-raised:  #080d18;
+  --bg-float:   #0d1525;
+  --bg-overlay: #121e35;
+
+  /* Glass system */
+  --glass-sm:   rgba(13,21,37,0.5);
+  --glass-md:   rgba(13,21,37,0.7);
+  --glass-lg:   rgba(8,13,24,0.85);
+
+  /* Borders */
+  --border-subtle:  rgba(255,255,255,0.05);
+  --border-default: rgba(255,255,255,0.09);
+  --border-strong:  rgba(255,255,255,0.15);
+
+  /* Brand colors */
+  --cyan:       #00d4ff;
+  --cyan-10:    rgba(0,212,255,0.10);
+  --cyan-20:    rgba(0,212,255,0.20);
+  --cyan-40:    rgba(0,212,255,0.40);
+  --violet:     #7c3aed;
+  --violet-10:  rgba(124,58,237,0.10);
+  --pink:       #e8356d;
+
+  /* OS accent colors */
+  --win:        #0078d4;
+  --win-bg:     rgba(0,120,212,0.10);
+  --win-border: rgba(0,120,212,0.25);
+  --ubu:        #e95420;
+  --ubu-bg:     rgba(233,84,32,0.10);
+  --ubu-border: rgba(233,84,32,0.25);
+  --mac:        #555555;
+  --mac-bg:     rgba(120,120,140,0.10);
+  --mac-border: rgba(120,120,140,0.25);
+  --mint:       #00a550;
+  --mint-bg:    rgba(0,165,80,0.10);
+  --mint-border:rgba(0,165,80,0.25);
+  --fed:        #3c6eb4;
+  --fed-bg:     rgba(60,110,180,0.10);
+  --fed-border: rgba(60,110,180,0.25);
+
+  /* Text */
+  --text-primary:   #eef2ff;
+  --text-secondary: rgba(238,242,255,0.60);
+  --text-muted:     rgba(238,242,255,0.38);
+  --text-dim:       rgba(238,242,255,0.22);
+
+  /* Semantic */
+  --green: #22c55e;
+  --amber: #f59e0b;
+  --red:   #ef4444;
+
+  /* Typography */
+  --font:  'Inter', system-ui, -apple-system, sans-serif;
+  --mono:  'JetBrains Mono', 'Fira Code', monospace;
+
+  /* Spacing scale */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+
+  /* Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --radius-2xl: 24px;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-card: 0 4px 24px rgba(0,0,0,0.4), 0 1px 0 rgba(255,255,255,0.04) inset;
+  --shadow-glow-cyan: 0 0 24px rgba(0,212,255,0.15);
+  --shadow-glow-win:  0 0 24px rgba(0,120,212,0.20);
+  --shadow-glow-ubu:  0 0 24px rgba(233,84,32,0.20);
+  --shadow-glow-mac:  0 0 24px rgba(120,120,140,0.20);
+  --shadow-glow-mint: 0 0 24px rgba(0,165,80,0.20);
+}
+
+/* ═══════════════════════════════════════════════════
+   RESET & BASE
+═══════════════════════════════════════════════════ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+  scrollbar-width: thin;
+  scrollbar-color: var(--violet) transparent;
+}
+
+body {
+  font-family: var(--font);
+  background: var(--bg-base);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+button { font-family: inherit; }
+ul, ol { list-style: none; }
+
+/* Subtle grid overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    linear-gradient(rgba(0,212,255,0.018) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,212,255,0.018) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+/* Ambient orbs */
+.orb { position: fixed; border-radius: 50%; filter: blur(120px); pointer-events: none; z-index: 0; }
+.orb-1 { width: 600px; height: 600px; background: rgba(124,58,237,0.10); top: -200px; right: -100px; animation: orb-float 18s ease-in-out infinite; }
+.orb-2 { width: 500px; height: 500px; background: rgba(0,212,255,0.07); bottom: 5%; left: -150px; animation: orb-float 22s ease-in-out infinite reverse; animation-delay: -6s; }
+.orb-3 { width: 400px; height: 400px; background: rgba(232,53,109,0.05); top: 45%; right: 8%; animation: orb-float 26s ease-in-out infinite; animation-delay: -12s; }
+
+@keyframes orb-float {
+  0%, 100% { transform: translate(0, 0); }
+  33%       { transform: translate(20px, -30px); }
+  66%       { transform: translate(-15px, 15px); }
+}
+
+/* ═══════════════════════════════════════════════════
+   LAYOUT
+═══════════════════════════════════════════════════ */
+.container {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 var(--space-5);
+}
+
+@media (min-width: 640px) { .container { padding: 0 var(--space-8); } }
+@media (min-width: 1024px) { .container { padding: 0 var(--space-10); } }
+
+/* ═══════════════════════════════════════════════════
+   NAVIGATION
+═══════════════════════════════════════════════════ */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 900;
+  background: rgba(2,4,8,0.88);
+  backdrop-filter: blur(24px) saturate(160%);
+  -webkit-backdrop-filter: blur(24px) saturate(160%);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  gap: var(--space-4);
+}
+
+/* Logo */
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 1.15rem;
+  letter-spacing: -0.035em;
+  flex-shrink: 0;
+}
+.nav-logo-icon {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+}
+.nav-logo-text {
+  background: linear-gradient(135deg, var(--cyan) 0%, #818cf8 60%, var(--pink) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Desktop links */
+.nav-links {
+  display: none;
+  align-items: center;
+  gap: var(--space-1);
+}
+@media (min-width: 900px) { .nav-links { display: flex; } }
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-sm);
+  transition: color 0.18s, background 0.18s;
+}
+.nav-links a:hover { color: var(--text-primary); background: var(--border-subtle); }
+
+/* CTA */
+.nav-cta {
+  display: none;
+  align-items: center;
+  gap: var(--space-2);
+  text-decoration: none;
+  background: var(--cyan);
+  color: var(--bg-base);
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: var(--space-2) var(--space-5);
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+  transition: opacity 0.18s, transform 0.18s;
+}
+.nav-cta:hover { opacity: 0.88; transform: translateY(-1px); }
+@media (min-width: 640px) { .nav-cta { display: inline-flex; } }
+
+/* Hamburger */
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  padding: var(--space-2);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--text-primary);
+  border-radius: 2px;
+  transition: transform 0.3s, opacity 0.3s;
+}
+.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+@media (min-width: 900px) { .hamburger { display: none; } }
+
+/* Mobile drawer */
+.mobile-drawer {
+  display: none;
+  position: fixed;
+  top: 60px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(2,4,8,0.98);
+  backdrop-filter: blur(24px);
+  z-index: 850;
+  padding: var(--space-5);
+  flex-direction: column;
+  gap: var(--space-2);
+  overflow-y: auto;
+}
+.mobile-drawer.open { display: flex; }
+.mobile-drawer a {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  text-decoration: none;
+  color: var(--text-secondary);
+  font-size: 1rem;
+  font-weight: 500;
+  padding: var(--space-4) var(--space-4);
+  border-radius: var(--radius-lg);
+  border: 1px solid transparent;
+  transition: all 0.18s;
+}
+.mobile-drawer a:hover { color: var(--text-primary); border-color: var(--border-default); background: var(--glass-sm); }
+.mobile-drawer a svg { width: 20px; height: 20px; flex-shrink: 0; color: var(--text-muted); }
+
+/* ═══════════════════════════════════════════════════
+   SECTION HELPERS
+═══════════════════════════════════════════════════ */
+.section { position: relative; z-index: 1; padding: var(--space-16) 0; }
+.section + .section { padding-top: 0; }
+
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-4);
+}
+.section-label svg { width: 13px; height: 13px; }
+
+.section-title {
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+  margin-bottom: var(--space-4);
+}
+.section-title .highlight {
+  background: linear-gradient(135deg, var(--cyan), #818cf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.section-sub {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.75;
+  max-width: 520px;
+}
+
+/* Center variant */
+.section-header-center { text-align: center; margin-bottom: var(--space-12); }
+.section-header-center .section-sub { margin: 0 auto; }
+
+/* ═══════════════════════════════════════════════════
+   REVEAL ANIMATIONS
+═══════════════════════════════════════════════════ */
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.vis { opacity: 1; transform: none; }
+.reveal-d1 { transition-delay: 0.08s; }
+.reveal-d2 { transition-delay: 0.16s; }
+.reveal-d3 { transition-delay: 0.24s; }
+.reveal-d4 { transition-delay: 0.32s; }
+.reveal-d5 { transition-delay: 0.40s; }
+
+/* ═══════════════════════════════════════════════════
+   HERO
+═══════════════════════════════════════════════════ */
+.hero {
+  position: relative;
+  z-index: 1;
+  padding: 5rem 0 3.5rem;
+  text-align: center;
+}
+@media (min-width: 768px) { .hero { padding: 6.5rem 0 4.5rem; } }
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  background: var(--cyan-10);
+  border: 1px solid var(--cyan-20);
+  color: var(--cyan);
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.9rem;
+  border-radius: var(--radius-full);
+  margin-bottom: var(--space-6);
+  animation: fade-in-up 0.6s ease both;
+}
+.live-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--green);
+  animation: live-pulse 2s ease-in-out infinite;
+}
+@keyframes live-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); box-shadow: 0 0 0 0 rgba(34,197,94,0.5); }
+  50%       { opacity: 0.7; transform: scale(1.2); box-shadow: 0 0 0 5px transparent; }
+}
+
+.hero h1 {
+  font-size: clamp(2.4rem, 7vw, 5rem);
+  font-weight: 900;
+  letter-spacing: -0.05em;
+  line-height: 1.0;
+  margin-bottom: var(--space-5);
+  animation: fade-in-up 0.7s ease 0.1s both;
+}
+.hero-gradient-text {
+  display: block;
+  background: linear-gradient(135deg, var(--cyan) 0%, #818cf8 45%, var(--pink) 100%);
+  background-size: 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient-shift 5s linear infinite;
+}
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+.hero p {
+  color: var(--text-secondary);
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
+  line-height: 1.8;
+  max-width: 520px;
+  margin: 0 auto var(--space-8);
+  animation: fade-in-up 0.7s ease 0.2s both;
+}
+
+.hero-actions {
+  display: flex;
+  gap: var(--space-3);
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: var(--space-10);
+  animation: fade-in-up 0.7s ease 0.3s both;
+}
+
+/* Primary button */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  background: var(--cyan);
+  color: var(--bg-base);
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 0.7rem 1.6rem;
+  border-radius: var(--radius-full);
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
+  box-shadow: 0 0 0 0 var(--cyan-40);
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 24px var(--cyan-20), 0 0 0 4px var(--cyan-10); }
+.btn-primary svg { width: 16px; height: 16px; flex-shrink: 0; }
+
+/* Secondary button */
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  background: transparent;
+  color: var(--text-primary);
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.7rem 1.6rem;
+  border-radius: var(--radius-full);
+  text-decoration: none;
+  border: 1px solid var(--border-default);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.btn-secondary:hover { border-color: var(--border-strong); background: var(--border-subtle); }
+.btn-secondary svg { width: 16px; height: 16px; flex-shrink: 0; }
+
+/* Search bar */
+.hero-search {
+  max-width: 560px;
+  margin: 0 auto;
+  position: relative;
+  animation: fade-in-up 0.7s ease 0.4s both;
+}
+.search-box {
+  display: flex;
+  align-items: center;
+  background: var(--glass-md);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.search-box:focus-within {
+  border-color: var(--cyan-20);
+  box-shadow: 0 0 0 3px var(--cyan-10), var(--shadow-glow-cyan);
+}
+.search-box-icon {
+  display: flex;
+  align-items: center;
+  padding: 0 var(--space-4);
+  color: var(--text-muted);
+  flex-shrink: 0;
+  transition: color 0.2s;
+}
+.search-box:focus-within .search-box-icon { color: var(--cyan); }
+.search-box-icon svg { width: 18px; height: 18px; }
+#searchInput {
+  flex: 1;
+  padding: 0.85rem 0;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text-primary);
+  font-family: var(--font);
+  font-size: 0.9rem;
+}
+#searchInput::placeholder { color: var(--text-muted); }
+.search-shortcut {
+  display: none;
+  padding: 0 var(--space-4);
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  color: var(--text-dim);
+  letter-spacing: 0.05em;
+  border-left: 1px solid var(--border-subtle);
+  height: 52px;
+  align-items: center;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+@media (min-width: 480px) { .search-shortcut { display: flex; } }
+
+/* Search dropdown */
+#search-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0; right: 0;
+  background: var(--glass-lg);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  z-index: 50;
+  display: none;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+#search-dropdown.show { display: block; }
+.search-result {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-5);
+  text-decoration: none;
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+  transition: background 0.15s;
+  border-bottom: 1px solid var(--border-subtle);
+}
+.search-result:last-child { border-bottom: none; }
+.search-result:hover { background: var(--border-subtle); color: var(--text-primary); }
+.search-result-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+.search-result-name { font-weight: 600; flex: 1; }
+.search-result-meta { font-size: 0.76rem; color: var(--text-muted); font-family: var(--mono); }
+.search-match { color: var(--cyan); font-weight: 700; }
+.search-empty { padding: var(--space-5); text-align: center; color: var(--text-muted); font-size: 0.88rem; }
+
+/* ═══════════════════════════════════════════════════
+   STATS BAR
+═══════════════════════════════════════════════════ */
+.stats-bar {
+  position: relative;
+  z-index: 1;
+  background: var(--glass-sm);
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+  backdrop-filter: blur(12px);
+}
+.stats-bar-inner {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--space-8);
+  padding: var(--space-6) var(--space-5);
+}
+.stat-item { text-align: center; }
+.stat-value {
+  font-family: var(--mono);
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  background: linear-gradient(135deg, var(--cyan), #818cf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: block;
+}
+.stat-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-family: var(--mono);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+/* ═══════════════════════════════════════════════════
+   OS CARDS
+═══════════════════════════════════════════════════ */
+.os-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+}
+@media (min-width: 640px)  { .os-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { .os-grid { grid-template-columns: repeat(3, 1fr); } }
+
+/* Card */
+.os-card {
+  position: relative;
+  background: var(--glass-sm);
+  border: 1px solid var(--border-default);
+  border-radius: var(--r, var(--radius-xl));
+  padding: var(--space-6);
+  text-decoration: none;
+  color: var(--text-primary);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+              border-color 0.3s,
+              box-shadow 0.3s;
+  overflow: hidden;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+.os-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    ellipse 80% 60% at 50% -10%,
+    var(--card-glow, rgba(0,212,255,0.06)),
+    transparent
+  );
+  pointer-events: none;
+}
+.os-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--card-border, var(--border-strong));
+  box-shadow: var(--card-shadow, var(--shadow-glow-cyan));
+}
+
+/* Card: Windows */
+.os-card[data-os="win"]  { --card-glow: rgba(0,120,212,0.08); --card-border: var(--win-border); --card-shadow: var(--shadow-glow-win); }
+.os-card[data-os="ubu"]  { --card-glow: rgba(233,84,32,0.08); --card-border: var(--ubu-border); --card-shadow: var(--shadow-glow-ubu); }
+.os-card[data-os="mac"]  { --card-glow: rgba(120,120,140,0.08); --card-border: var(--mac-border); --card-shadow: var(--shadow-glow-mac); }
+.os-card[data-os="mint"] { --card-glow: rgba(0,165,80,0.08); --card-border: var(--mint-border); --card-shadow: var(--shadow-glow-mint); }
+.os-card[data-os="fed"]  { --card-glow: rgba(60,110,180,0.08); --card-border: var(--fed-border); --card-shadow: 0 0 24px rgba(60,110,180,0.20); }
+
+/* Card header row */
+.card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+/* OS Logo container */
+.os-logo-wrap {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: 1px solid var(--border-default);
+  background: var(--glass-sm);
+}
+.os-logo-wrap svg { display: block; }
+
+/* Pill badge */
+.card-badge {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  padding: 0.22rem 0.55rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+.badge-free  { color: var(--green); border-color: rgba(34,197,94,0.3); background: rgba(34,197,94,0.08); }
+.badge-paid  { color: var(--amber); border-color: rgba(245,158,11,0.3); background: rgba(245,158,11,0.06); }
+.badge-mac   { color: #a3a3a3;     border-color: rgba(163,163,163,0.25); background: rgba(163,163,163,0.06); }
+
+/* Card text */
+.card-name {
+  font-size: 1.2rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+}
+.card-version {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+  margin-top: 2px;
+}
+.card-desc {
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  flex: 1;
+}
+
+/* Tags */
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+.tag {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  font-weight: 500;
+  padding: 0.18rem 0.5rem;
+  border-radius: 5px;
+  background: var(--border-subtle);
+  border: 1px solid var(--border-default);
+  color: var(--text-muted);
+  letter-spacing: 0.03em;
+}
+
+/* Card footer */
+.card-footer {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--border-subtle);
+  flex-wrap: wrap;
+}
+
+/* Download button variants */
+.dl-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 0.55rem 1.1rem;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+  flex-shrink: 0;
+}
+.dl-btn svg { width: 14px; height: 14px; flex-shrink: 0; }
+.dl-btn:hover { transform: translateY(-1px); }
+
+.dl-win  { background: var(--win); color: #fff; box-shadow: 0 3px 12px rgba(0,120,212,0.3); }
+.dl-win:hover  { box-shadow: 0 6px 22px rgba(0,120,212,0.45); }
+.dl-ubu  { background: var(--ubu); color: #fff; box-shadow: 0 3px 12px rgba(233,84,32,0.3); }
+.dl-ubu:hover  { box-shadow: 0 6px 22px rgba(233,84,32,0.45); }
+.dl-mac  { background: #555; color: #fff; box-shadow: 0 3px 12px rgba(0,0,0,0.35); }
+.dl-mac:hover  { box-shadow: 0 6px 22px rgba(0,0,0,0.45); }
+.dl-mint { background: var(--mint); color: #fff; box-shadow: 0 3px 12px rgba(0,165,80,0.3); }
+.dl-mint:hover { box-shadow: 0 6px 22px rgba(0,165,80,0.45); }
+.dl-fed  { background: var(--fed); color: #fff; box-shadow: 0 3px 12px rgba(60,110,180,0.3); }
+.dl-fed:hover  { box-shadow: 0 6px 22px rgba(60,110,180,0.45); }
+
+.guide-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.18s;
+}
+.guide-link:hover { color: var(--text-primary); }
+.guide-link svg { width: 13px; height: 13px; }
+
+/* Hidden during search */
+.os-card.hidden { display: none; }
+
+/* ═══════════════════════════════════════════════════
+   MORE DISTROS GRID
+═══════════════════════════════════════════════════ */
+.distro-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+}
+@media (min-width: 640px)  { .distro-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 1024px) { .distro-grid { grid-template-columns: repeat(4, 1fr); } }
+
+.distro-tile {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  background: var(--glass-sm);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  text-decoration: none;
+  color: var(--text-secondary);
+  transition: all 0.2s;
+  backdrop-filter: blur(8px);
+}
+.distro-tile:hover { border-color: var(--border-strong); color: var(--text-primary); transform: translateY(-2px); background: var(--border-subtle); }
+.distro-tile-logo { width: 36px; height: 36px; flex-shrink: 0; }
+.distro-tile-info { flex: 1; min-width: 0; }
+.distro-tile-name { font-size: 0.88rem; font-weight: 700; letter-spacing: -0.01em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.distro-tile-desc { font-size: 0.72rem; color: var(--text-muted); margin-top: 1px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+/* ═══════════════════════════════════════════════════
+   INSTALL GUIDE STEPS
+═══════════════════════════════════════════════════ */
+.steps-container {
+  max-width: 780px;
+  margin: 0 auto;
+  position: relative;
+}
+.steps-container::before {
+  content: '';
+  position: absolute;
+  left: 23px;
+  top: 28px;
+  bottom: 28px;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, var(--border-default), var(--border-default), transparent);
+}
+@media (min-width: 640px) { .steps-container::before { left: 28px; } }
+
+.step-row {
+  display: flex;
+  gap: var(--space-5);
+  padding-bottom: var(--space-8);
+  position: relative;
+}
+.step-row:last-child { padding-bottom: 0; }
+
+.step-node {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  font-weight: 600;
+  border: 1px solid var(--border-default);
+  background: var(--bg-raised);
+  color: var(--cyan);
+  z-index: 1;
+  transition: all 0.25s;
+}
+.step-row:hover .step-node { border-color: var(--cyan-20); background: var(--cyan-10); box-shadow: 0 0 16px var(--cyan-10); }
+
+.step-body { flex: 1; padding-top: var(--space-3); }
+.step-title { font-size: 1rem; font-weight: 700; letter-spacing: -0.01em; margin-bottom: var(--space-2); }
+.step-text  { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.75; }
+.step-code  {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  background: var(--bg-float);
+  border: 1px solid var(--border-default);
+  padding: 0.5rem 0.9rem;
+  border-radius: var(--radius-md);
+  margin-top: var(--space-3);
+  color: var(--cyan);
+  letter-spacing: 0.02em;
+}
+.step-links { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-top: var(--space-3); }
+.step-link  {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-size: 0.8rem;
+  font-family: var(--mono);
+  color: var(--text-muted);
+  text-decoration: none;
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-default);
+  transition: all 0.18s;
+}
+.step-link:hover { color: var(--text-primary); border-color: var(--border-strong); background: var(--border-subtle); }
+.step-link svg { width: 11px; height: 11px; }
+
+/* ═══════════════════════════════════════════════════
+   QUIZ — AI RECOMMENDATION ENGINE
+═══════════════════════════════════════════════════ */
+.quiz-wrapper {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.quiz-shell {
+  background: var(--glass-md);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 32px 80px rgba(0,0,0,0.45), 0 0 0 1px rgba(255,255,255,0.03) inset;
+}
+
+/* Terminal-style top bar */
+.quiz-topbar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-5);
+  background: rgba(0,0,0,0.2);
+  border-bottom: 1px solid var(--border-subtle);
+}
+.quiz-topbar-dots { display: flex; gap: 6px; }
+.quiz-topbar-dots span {
+  width: 10px; height: 10px; border-radius: 50%;
+  background: rgba(255,255,255,0.07);
+}
+.quiz-topbar-dots span:nth-child(1) { background: #ff5f57; }
+.quiz-topbar-dots span:nth-child(2) { background: #febc2e; }
+.quiz-topbar-dots span:nth-child(3) { background: #28c840; }
+.quiz-topbar-title {
+  flex: 1;
+  text-align: center;
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+}
+.quiz-topbar-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  color: var(--green);
+  letter-spacing: 0.05em;
+}
+.quiz-topbar-status::before {
+  content: '';
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: var(--green);
+  animation: live-pulse 2s ease-in-out infinite;
+}
+
+/* Quiz inner content */
+.quiz-content { padding: var(--space-8) var(--space-6); }
+@media (min-width: 480px) { .quiz-content { padding: var(--space-10) var(--space-8); } }
+
+/* Progress bar */
+.quiz-progress-track {
+  height: 2px;
+  background: var(--border-subtle);
+  border-radius: var(--radius-full);
+  margin-bottom: var(--space-5);
+  overflow: hidden;
+}
+.quiz-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--cyan), #818cf8, var(--pink));
+  background-size: 200%;
+  border-radius: var(--radius-full);
+  transition: width 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  animation: gradient-shift 3s linear infinite;
+}
+
+/* Step indicators */
+.quiz-step-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-6);
+}
+.quiz-step-label {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.quiz-step-dots {
+  display: flex;
+  gap: var(--space-2);
+}
+.quiz-step-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--border-default);
+  transition: background 0.3s, transform 0.3s;
+}
+.quiz-step-dot.done { background: var(--cyan); }
+.quiz-step-dot.active { background: var(--cyan); transform: scale(1.4); }
+
+/* Question */
+.quiz-question {
+  font-size: clamp(1.1rem, 3vw, 1.4rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.3;
+  margin-bottom: var(--space-6);
+}
+
+/* Options grid */
+.quiz-options {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-3);
+}
+@media (min-width: 480px) { .quiz-options { grid-template-columns: 1fr 1fr; } }
+
+.quiz-option {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-4) var(--space-5);
+  background: var(--bg-float);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+  font-family: var(--font);
+  color: var(--text-secondary);
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.quiz-option::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--cyan-10), transparent);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.quiz-option:hover { border-color: var(--border-strong); color: var(--text-primary); transform: scale(1.01); }
+.quiz-option:hover::before { opacity: 1; }
+.quiz-option:active { transform: scale(0.98); }
+.quiz-option.selected { border-color: var(--cyan-20); background: var(--cyan-10); color: var(--text-primary); }
+.quiz-option.selected::before { opacity: 1; }
+
+.quiz-option-icon {
+  width: 40px; height: 40px;
+  border-radius: var(--radius-md);
+  background: var(--bg-overlay);
+  border: 1px solid var(--border-default);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+.quiz-option-icon svg { width: 20px; height: 20px; }
+.quiz-option-text {
+  font-size: 0.88rem;
+  font-weight: 600;
+  line-height: 1.4;
+  position: relative;
+  z-index: 1;
+}
+
+/* Scanning state */
+.quiz-scanning {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space-8) 0;
+}
+.scan-spinner {
+  width: 72px; height: 72px;
+  border-radius: 50%;
+  border: 1.5px solid var(--border-default);
+  border-top-color: var(--cyan);
+  animation: spin 1s linear infinite;
+  margin-bottom: var(--space-5);
+  position: relative;
+}
+.scan-spinner::after {
+  content: '';
+  position: absolute;
+  inset: 8px;
+  border-radius: 50%;
+  border: 1px solid var(--border-subtle);
+  border-bottom-color: var(--violet);
+  animation: spin 1.6s linear infinite reverse;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+.scan-label { font-family: var(--mono); font-size: 0.78rem; color: var(--cyan); letter-spacing: 0.08em; margin-bottom: var(--space-5); }
+.scan-logs  { width: 100%; max-width: 340px; }
+.scan-log {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  line-height: 2;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  opacity: 0;
+  animation: log-in 0.3s ease forwards;
+}
+.scan-log .ok   { color: var(--green); }
+.scan-log .proc { color: var(--cyan); }
+@keyframes log-in { from { opacity: 0; transform: translateX(-6px); } to { opacity: 1; transform: none; } }
+
+/* Result */
+.quiz-result { text-align: center; padding: var(--space-4) 0; }
+.result-icon-ring {
+  width: 88px; height: 88px;
+  border-radius: 50%;
+  margin: 0 auto var(--space-5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  animation: pop-in 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+@keyframes pop-in { from { transform: scale(0.5); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+.result-icon-ring::before {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 1.5px solid currentColor;
+  opacity: 0.3;
+  animation: ring-pulse 2s ease-in-out infinite;
+}
+.result-icon-ring::after {
+  content: '';
+  position: absolute;
+  inset: -14px;
+  border-radius: 50%;
+  border: 1px solid currentColor;
+  opacity: 0.12;
+  animation: ring-pulse 2s ease-in-out 0.4s infinite;
+}
+@keyframes ring-pulse { 0%,100% { transform: scale(1); opacity: 0.3; } 50% { transform: scale(1.05); opacity: 0.1; } }
+
+.result-eyebrow { font-family: var(--mono); font-size: 0.65rem; color: var(--text-muted); letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: var(--space-2); }
+.result-name    { font-size: clamp(1.6rem, 5vw, 2.2rem); font-weight: 900; letter-spacing: -0.05em; margin-bottom: var(--space-2); }
+.result-confidence { font-family: var(--mono); font-size: 0.8rem; margin-bottom: var(--space-5); }
+.result-desc    { font-size: 0.93rem; color: var(--text-secondary); line-height: 1.75; max-width: 440px; margin: 0 auto var(--space-6); }
+.result-actions { display: flex; gap: var(--space-3); justify-content: center; flex-wrap: wrap; }
+.btn-retry {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  background: transparent;
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  padding: 0.55rem 1.1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: var(--font);
+}
+.btn-retry:hover { color: var(--text-primary); border-color: var(--border-strong); background: var(--border-subtle); }
+.btn-retry svg { width: 14px; height: 14px; }
+
+/* ═══════════════════════════════════════════════════
+   COMPARISON TABLE
+═══════════════════════════════════════════════════ */
+.table-wrapper {
+  background: var(--glass-sm);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
+  overflow-x: auto;
+  backdrop-filter: blur(12px);
+}
+table { width: 100%; border-collapse: collapse; min-width: 540px; }
+thead { border-bottom: 1px solid var(--border-default); }
+th {
+  padding: var(--space-5) var(--space-5);
+  text-align: left;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  background: rgba(0,0,0,0.15);
+}
+th:first-child { color: var(--text-muted); font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase; }
+td {
+  padding: var(--space-4) var(--space-5);
+  font-size: 0.86rem;
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--border-subtle);
+  vertical-align: middle;
+}
+tr:last-child td { border-bottom: none; }
+tbody tr:hover td { background: var(--border-subtle); }
+td:first-child { color: var(--text-muted); font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.05em; text-transform: uppercase; }
+
+.th-os-label { display: flex; align-items: center; gap: var(--space-2); }
+.th-os-label svg { width: 16px; height: 16px; flex-shrink: 0; }
+
+.cell-yes  { display: flex; align-items: center; gap: 6px; color: var(--green); }
+.cell-no   { display: flex; align-items: center; gap: 6px; color: var(--red); }
+.cell-mid  { display: flex; align-items: center; gap: 6px; color: var(--amber); }
+.cell-yes svg, .cell-no svg, .cell-mid svg { width: 13px; height: 13px; flex-shrink: 0; }
+
+/* ═══════════════════════════════════════════════════
+   SYSTEM REQUIREMENTS CHECKER
+═══════════════════════════════════════════════════ */
+.checker-card {
+  max-width: 780px;
+  margin: 0 auto;
+  background: var(--glass-sm);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
+  backdrop-filter: blur(12px);
+}
+.checker-tabs {
+  display: flex;
+  border-bottom: 1px solid var(--border-default);
+  background: rgba(0,0,0,0.15);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.checker-tabs::-webkit-scrollbar { display: none; }
+.checker-tab {
+  flex: 1;
+  min-width: max-content;
+  padding: var(--space-4) var(--space-5);
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: var(--text-muted);
+  font-family: var(--font);
+  font-size: 0.84rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.checker-tab:hover { color: var(--text-primary); }
+.checker-tab.active { color: var(--cyan); border-bottom-color: var(--cyan); background: var(--cyan-10); }
+.checker-body { padding: var(--space-6); }
+.req-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-3);
+}
+@media (min-width: 640px) { .req-grid { grid-template-columns: repeat(3, 1fr); } }
+.req-item {
+  padding: var(--space-4);
+  background: var(--bg-float);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+}
+.req-label { font-family: var(--mono); font-size: 0.62rem; color: var(--text-muted); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: var(--space-2); }
+.req-value { font-size: 0.95rem; font-weight: 700; letter-spacing: -0.02em; color: var(--text-primary); }
+.req-note  { font-family: var(--mono); font-size: 0.68rem; color: var(--text-muted); margin-top: 2px; }
+
+/* ═══════════════════════════════════════════════════
+   FAQ
+═══════════════════════════════════════════════════ */
+.faq-list { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: var(--space-3); }
+.faq-item {
+  background: var(--glass-sm);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  backdrop-filter: blur(8px);
+  transition: border-color 0.2s;
+}
+.faq-item:hover { border-color: var(--border-default); }
+.faq-q {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: var(--space-5) var(--space-6);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  color: var(--text-primary);
+  font-family: var(--font);
+  font-size: 0.93rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  gap: var(--space-4);
+}
+.faq-q-left { display: flex; align-items: center; gap: var(--space-3); }
+.faq-q-left svg { width: 16px; height: 16px; color: var(--text-muted); flex-shrink: 0; }
+.faq-chevron { width: 16px; height: 16px; color: var(--text-muted); flex-shrink: 0; transition: transform 0.3s; }
+.faq-q.open .faq-chevron { transform: rotate(180deg); }
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), padding 0.3s;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.78;
+}
+.faq-answer.open { max-height: 320px; padding: 0 var(--space-6) var(--space-5) var(--space-6); }
+
+/* ═══════════════════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════════════════ */
+.footer {
+  position: relative;
+  z-index: 1;
+  border-top: 1px solid var(--border-subtle);
+  background: rgba(2,4,8,0.9);
+  padding: var(--space-16) 0 var(--space-8);
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-10);
+  margin-bottom: var(--space-10);
+}
+@media (min-width: 640px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 900px) { .footer-grid { grid-template-columns: 2fr 1fr 1fr; } }
+
+.footer-brand {}
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-weight: 800;
+  font-size: 1.1rem;
+  letter-spacing: -0.04em;
+  text-decoration: none;
+  margin-bottom: var(--space-4);
+  width: fit-content;
+}
+.footer-logo svg { width: 26px; height: 26px; }
+.footer-logo-text {
+  background: linear-gradient(135deg, var(--cyan), #818cf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.footer-desc {
+  font-size: 0.86rem;
+  line-height: 1.75;
+  color: var(--text-muted);
+  max-width: 300px;
+  margin-bottom: var(--space-5);
+}
+
+/* Instagram credit */
+.footer-credit {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  transition: all 0.2s;
+}
+.footer-credit:hover { color: var(--text-primary); border-color: var(--border-default); background: var(--border-subtle); }
+.footer-credit svg { width: 14px; height: 14px; color: #e1306c; }
+
+.footer-col h4 {
+  font-size: 0.68rem;
+  font-family: var(--mono);
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-4);
+}
+.footer-col a {
+  display: block;
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+  text-decoration: none;
+  margin-bottom: var(--space-3);
+  transition: color 0.18s;
+}
+.footer-col a:hover { color: var(--text-primary); }
+
+.footer-bottom {
+  border-top: 1px solid var(--border-subtle);
+  padding-top: var(--space-6);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+.footer-copy { font-family: var(--mono); font-size: 0.7rem; color: var(--text-muted); }
+.footer-disclaimer { font-family: var(--mono); font-size: 0.68rem; color: var(--text-dim); max-width: 400px; text-align: right; }
+@media (max-width: 639px) { .footer-disclaimer { text-align: left; } }
+
+/* ═══════════════════════════════════════════════════
+   UTILITY
+═══════════════════════════════════════════════════ */
+.text-muted { color: var(--text-muted); }
+.font-mono  { font-family: var(--mono); }
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* ═══════════════════════════════════════════════════
+   RESPONSIVE OVERRIDES
+═══════════════════════════════════════════════════ */
+@media (max-width: 479px) {
+  .hero-actions { flex-direction: column; align-items: center; }
+  .btn-primary, .btn-secondary { width: 100%; justify-content: center; }
+  .stats-bar-inner { gap: var(--space-6); }
+  .result-actions { flex-direction: column; align-items: center; }
+  .result-actions .dl-btn { width: 100%; justify-content: center; }
+  .result-actions .btn-retry { width: 100%; justify-content: center; }
+}
+</style>
+</head>
+
+<body>
+<!-- Ambient -->
+<div class="orb orb-1" aria-hidden="true"></div>
+<div class="orb orb-2" aria-hidden="true"></div>
+<div class="orb orb-3" aria-hidden="true"></div>
+
+<!-- ══════════════════════════ NAV ══════════════════════════ -->
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <div class="container">
+    <div class="nav-inner">
+
+      <a class="nav-logo" href="index.html" aria-label="ISO Hub home">
+        <svg class="nav-logo-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <linearGradient id="logo-g" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#00d4ff"/>
+              <stop offset="0.5" stop-color="#818cf8"/>
+              <stop offset="1" stop-color="#e8356d"/>
+            </linearGradient>
+          </defs>
+          <circle cx="16" cy="16" r="13.5" stroke="url(#logo-g)" stroke-width="1.5"/>
+          <circle cx="16" cy="16" r="3.5" fill="url(#logo-g)"/>
+          <line x1="16" y1="2.5" x2="16" y2="7.5" stroke="url(#logo-g)" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="16" y1="24.5" x2="16" y2="29.5" stroke="url(#logo-g)" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="2.5" y1="16" x2="7.5" y2="16" stroke="url(#logo-g)" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="24.5" y1="16" x2="29.5" y2="16" stroke="url(#logo-g)" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="16" cy="16" r="8" stroke="url(#logo-g)" stroke-width="0.6" stroke-dasharray="2 3.5"/>
+        </svg>
+        <span class="nav-logo-text">ISO Hub</span>
+      </a>
+
+      <ul class="nav-links" role="list">
+        <li><a href="#os">Downloads</a></li>
+        <li><a href="#distros">Distros</a></li>
+        <li><a href="#guide">Install Guide</a></li>
+        <li><a href="#quiz">OS Quiz</a></li>
+        <li><a href="#compare">Compare</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+
+      <div style="display:flex;align-items:center;gap:.75rem">
+        <a class="nav-cta" href="#os">
+          <svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+          Get Started
+        </a>
+        <button class="hamburger" id="hbtn" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+
+    </div>
   </div>
 </nav>
 
-<div class="mob-menu" id="mobMenu">
-  <a href="#shop" onclick="toggleMenu()">Shop</a>
-  <a href="#about" onclick="toggleMenu()">About</a>
-  <a href="#how" onclick="toggleMenu()">How It Works</a>
-  <a href="login.html">Login / Register</a>
-  <a href="admin.html">Admin</a>
+<!-- Mobile Drawer -->
+<div class="mobile-drawer" id="drawer" role="dialog" aria-label="Mobile navigation">
+  <a href="#os" onclick="closeDrawer()">
+    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+    OS Downloads
+  </a>
+  <a href="#distros" onclick="closeDrawer()">
+    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20"/></svg>
+    More Distros
+  </a>
+  <a href="#guide" onclick="closeDrawer()">
+    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13"/></svg>
+    Install Guide
+  </a>
+  <a href="#quiz" onclick="closeDrawer()">
+    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3m0 4h.01"/></svg>
+    OS Quiz
+  </a>
+  <a href="#compare" onclick="closeDrawer()">
+    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm6 0V9a2 2 0 012-2h2a2 2 0 012 2v10"/></svg>
+    Compare OS
+  </a>
+  <a href="#faq" onclick="closeDrawer()">
+    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3m0 4h.01"/></svg>
+    FAQ
+  </a>
 </div>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-grid"></div>
-  <div class="hero-inner container">
-    <div class="hero-eyebrow reveal">
-      <span class="eyebrow-dot"></span>
-      <span class="eyebrow-txt">New Drops Weekly · Free Ship Over $30</span>
-    </div>
-    <h1 class="hero-title reveal d1">DIECAST<br><span class="t-red">LEGENDS</span><br><span class="t-out">BY OGTOX</span></h1>
-    <p class="hero-desc reveal d2">Premium Hot Wheels, Majorette, Matchbox &amp; rare diecast models — hand-picked by your favourite YouTube car collector.</p>
-    <div class="hero-ctas reveal d3">
-      <a href="#shop" class="btn-primary">Shop Now</a>
-      <a href="#about" class="btn-secondary">About OGTOX</a>
-    </div>
-    <div class="hero-stats reveal d4">
-      <div><div class="stat-v">500<em>+</em></div><div class="stat-k">Models</div></div>
-      <div><div class="stat-v">100<em>%</em></div><div class="stat-k">Authentic</div></div>
-      <div><div class="stat-v">24<em>h</em></div><div class="stat-k">Dispatch</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- MARQUEE -->
-<div class="marquee-bar">
-  <div class="m-track"><div class="m-inner">
-    <span class="mq-item">🔥 Hot Wheels</span><span class="mq-item">◆</span>
-    <span class="mq-item">🚗 Majorette</span><span class="mq-item">◆</span>
-    <span class="mq-item">🚙 Matchbox</span><span class="mq-item">◆</span>
-    <span class="mq-item">🏆 Limited Editions</span><span class="mq-item">◆</span>
-    <span class="mq-item">📦 Free Shipping Over $30</span><span class="mq-item">◆</span>
-    <span class="mq-item">✅ 100% Authentic</span><span class="mq-item">◆</span>
-    <span class="mq-item">⚡ 24h Dispatch</span><span class="mq-item">◆</span>
-    <span class="mq-item">🔥 Hot Wheels</span><span class="mq-item">◆</span>
-    <span class="mq-item">🚗 Majorette</span><span class="mq-item">◆</span>
-    <span class="mq-item">🚙 Matchbox</span><span class="mq-item">◆</span>
-    <span class="mq-item">🏆 Limited Editions</span><span class="mq-item">◆</span>
-    <span class="mq-item">📦 Free Shipping Over $30</span><span class="mq-item">◆</span>
-    <span class="mq-item">✅ 100% Authentic</span><span class="mq-item">◆</span>
-    <span class="mq-item">⚡ 24h Dispatch</span><span class="mq-item">◆</span>
-  </div></div>
-</div>
-
-<!-- BRAND BAR (horizontally scrollable on mobile) -->
-<div class="brand-bar">
-  <div class="brand-row">
-    <div class="brand-chip active" onclick="filterBy('all',this)">
-      <svg viewBox="0 0 50 20"><text x="25" y="15" font-family="Impact,sans-serif" font-size="14" fill="#f0f0f0" text-anchor="middle" letter-spacing="2">ALL</text></svg>
-      <span>All</span>
-    </div>
-    <div class="brand-chip" onclick="filterBy('hw',this)">
-      <svg viewBox="0 0 130 22"><path d="M2 17C2 17 6 8 10 7C8 12 8.5 16 11 15C9.5 18 11.5 20.5 14 17.5C12.5 22.5 6.5 23 2 17Z" fill="#e5001b"/><path d="M7 16C7 16 9 11 12 10C10.5 14 11 17 13 16Z" fill="#ff6600"/><text x="20" y="17" font-family="Impact,sans-serif" font-size="13" fill="#e5001b" letter-spacing="1">HOT WHEELS</text></svg>
-      <span>Hot Wheels</span>
-    </div>
-    <div class="brand-chip" onclick="filterBy('mj',this)">
-      <svg viewBox="0 0 110 22"><rect x="0" y="0" width="110" height="22" rx="2" fill="#FFD700"/><text x="55" y="15" font-family="Impact,sans-serif" font-size="12" fill="#111" text-anchor="middle">MAJORETTE</text><rect x="0" y="0" width="110" height="4" fill="#e60000"/><rect x="0" y="18" width="110" height="4" fill="#e60000"/></svg>
-      <span>Majorette</span>
-    </div>
-    <div class="brand-chip" onclick="filterBy('mb',this)">
-      <svg viewBox="0 0 100 22"><rect x="0" y="0" width="100" height="22" rx="2" fill="#003087"/><text x="50" y="15" font-family="Impact,sans-serif" font-size="12" fill="#fff" text-anchor="middle">MATCHBOX</text></svg>
-      <span>Matchbox</span>
-    </div>
-    <div class="brand-chip" onclick="filterBy('tm',this)">
-      <svg viewBox="0 0 80 22"><rect x="0" y="0" width="80" height="22" rx="2" fill="#e5001b"/><text x="40" y="15" font-family="Impact,sans-serif" font-size="13" fill="#fff" text-anchor="middle" letter-spacing="1">TOMICA</text></svg>
-      <span>Tomica</span>
-    </div>
-    <div class="brand-chip" onclick="filterBy('rare',this)">
-      <svg viewBox="0 0 60 22"><polygon points="30,2 58,20 2,20" fill="none" stroke="#c9a84c" stroke-width="1.5"/><text x="30" y="16" font-family="Impact,sans-serif" font-size="8" fill="#c9a84c" text-anchor="middle">RARE</text></svg>
-      <span>Rare</span>
-    </div>
-  </div>
-</div>
-
-<!-- PRODUCTS -->
-<section class="section" id="shop" style="background:#080808">
+<!-- ══════════════════════════ HERO ══════════════════════════ -->
+<header class="hero">
   <div class="container">
-    <div class="products-top reveal">
-      <div>
-        <div class="s-tag">The Collection</div>
-        <h2 class="s-h">Featured Models</h2>
-      </div>
-      <div class="filter-row">
-        <button class="fbtn active" onclick="filterBy('all',this)">All</button>
-        <button class="fbtn" onclick="filterBy('hw',this)">Hot Wheels</button>
-        <button class="fbtn" onclick="filterBy('mj',this)">Majorette</button>
-        <button class="fbtn" onclick="filterBy('mb',this)">Matchbox</button>
-        <button class="fbtn" onclick="filterBy('rare',this)">Rare</button>
-      </div>
+    <div class="hero-badge">
+      <span class="live-dot" aria-hidden="true"></span>
+      All Sources Verified Official
     </div>
-    <div class="pgrid" id="pgrid"></div>
-  </div>
-</section>
 
-<!-- ABOUT -->
-<section class="section" id="about" style="background:#111">
-  <div class="container">
-    <div id="aboutGrid" style="display:grid;grid-template-columns:1fr;gap:28px">
-      <div class="about-card reveal">
-        <div class="yt-thumb" onclick="window.open('https://youtube.com','_blank')">
-          <div class="yt-play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21" fill="#fff"/></svg></div>
+    <h1>
+      Download &amp; Install<br/>
+      <span class="hero-gradient-text">Any Operating System</span>
+    </h1>
+
+    <p>
+      Official ISO files, step-by-step install guides, and an AI-powered quiz to find your
+      perfect OS — all in one place. Zero third-party mirrors. Always free.
+    </p>
+
+    <div class="hero-actions">
+      <a class="btn-primary" href="#os">
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+        Browse Downloads
+      </a>
+      <a class="btn-secondary" href="#quiz">
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+        Find My OS
+      </a>
+    </div>
+
+    <!-- Command Search -->
+    <div class="hero-search">
+      <div class="search-box" role="search">
+        <div class="search-box-icon" aria-hidden="true">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
         </div>
-        <div class="yt-row">
-          <div class="yt-icon"><svg viewBox="0 0 24 24"><path d="M23 7s-.3-2-1.2-2.8c-1.1-1.2-2.4-1.2-3-1.3C16.2 2.8 12 2.8 12 2.8s-4.2 0-6.8.1c-.6.1-1.9.1-3 1.3C1.3 5 1 7 1 7S.7 9.1.7 11.3v2c0 2.1.3 4.3.3 4.3s.3 2 1.2 2.8c1.1 1.2 2.6 1.1 3.3 1.2C7.5 21.8 12 21.8 12 21.8s4.2 0 6.8-.2c.6-.1 1.9-.1 3-1.3.9-.8 1.2-2.8 1.2-2.8s.3-2.1.3-4.3v-2C23.3 9.1 23 7 23 7zM9.7 15.5V8.4l8.1 3.6-8.1 3.5z" fill="#fff"/></svg></div>
-          <div><div class="yt-name">OGTOX</div><div class="yt-sub">YouTube Diecast Collector</div></div>
-        </div>
+        <input
+          type="search"
+          id="searchInput"
+          placeholder="Search — Windows, gaming, old PC, privacy, free…"
+          autocomplete="off"
+          aria-label="Search operating systems"
+        />
+        <div class="search-shortcut" aria-hidden="true">⌘ K</div>
       </div>
-      <div class="reveal d2">
-        <div class="s-tag">The Collector</div>
-        <h2 class="s-h">Who Is OGTOX?</h2>
-        <p class="about-body">OGTOX is a passionate diecast car collector and YouTube content creator who has been reviewing and hunting down rare models for years. Every model in this shop is personally curated and authenticated by OGTOX himself.</p>
-        <div class="pills">
-          <span class="pill">Collector</span><span class="pill">YouTuber</span>
-          <span class="pill">1:64 Expert</span><span class="pill">Fast Shipping</span><span class="pill">Worldwide</span>
-        </div>
-      </div>
+      <div id="search-dropdown" role="listbox" aria-label="Search results"></div>
     </div>
   </div>
-</section>
+</header>
 
-<!-- HOW IT WORKS -->
-<section class="section" id="how" style="background:#080808">
-  <div class="container">
-    <div class="reveal" style="text-align:center">
-      <div class="s-tag" style="justify-content:center">Simple Process</div>
-      <h2 class="s-h">How It Works</h2>
+<!-- Stats -->
+<div class="stats-bar" role="complementary" aria-label="Site statistics">
+  <div class="stats-bar-inner">
+    <div class="stat-item reveal">
+      <span class="stat-value">5+</span>
+      <span class="stat-label">Operating Systems</span>
     </div>
-    <div class="how-grid">
-      <div class="how-step reveal d1"><div class="how-num">01</div><div class="how-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#f0f0f0" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></div><div class="how-title">Browse</div><p class="how-desc">Explore diecast models. Filter by brand, scale or condition.</p></div>
-      <div class="how-step reveal d2"><div class="how-num">02</div><div class="how-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#f0f0f0" stroke-width="1.5"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39A2 2 0 0 0 9.68 16h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></div><div class="how-title">Add to Cart</div><p class="how-desc">Select your favourites. Stock is limited — grab yours fast.</p></div>
-      <div class="how-step reveal d3"><div class="how-num">03</div><div class="how-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#f0f0f0" stroke-width="1.5"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></div><div class="how-title">Checkout</div><p class="how-desc">Secure payment. Cards, UPI, PayPal accepted.</p></div>
-      <div class="how-step reveal d4"><div class="how-num">04</div><div class="how-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#f0f0f0" stroke-width="1.5"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div><div class="how-title">Receive</div><p class="how-desc">Bubble-wrapped and dispatched within 24 hours.</p></div>
+    <div class="stat-item reveal reveal-d1">
+      <span class="stat-value">100%</span>
+      <span class="stat-label">Official Sources</span>
     </div>
-  </div>
-</section>
-
-<!-- NEWSLETTER -->
-<div class="nl-wrap">
-  <div class="container">
-    <div class="s-tag">Stay Updated</div>
-    <h2 class="s-h">New Drops. First Access.</h2>
-    <div class="nl-form">
-      <input type="email" class="nl-input" placeholder="your@email.com" id="nlEmail">
-      <button class="nl-btn" onclick="doNL()">Notify Me</button>
+    <div class="stat-item reveal reveal-d2">
+      <span class="stat-value">6</span>
+      <span class="stat-label">Step Install Guide</span>
+    </div>
+    <div class="stat-item reveal reveal-d3">
+      <span class="stat-value">Free</span>
+      <span class="stat-label">Always &amp; Forever</span>
     </div>
   </div>
 </div>
 
-<!-- FOOTER -->
-<footer>
+<!-- ══════════════════════════ OS DOWNLOADS ══════════════════════════ -->
+<section class="section" id="os" aria-labelledby="os-heading">
+  <div class="container">
+    <div class="section-header-center reveal">
+      <p class="section-label">
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+        Official ISO Repository
+      </p>
+      <h2 class="section-title" id="os-heading">Choose Your <span class="highlight">Operating System</span></h2>
+      <p class="section-sub">Every download button links directly to the official vendor page — no third-party mirrors, no bundled software, no risk.</p>
+    </div>
+
+    <div class="os-grid">
+
+      <!-- Windows 11 -->
+      <article class="os-card reveal reveal-d1" data-os="win" data-s="windows 11 gaming office modern tpm directx new hardware microsoft productivity">
+        <div class="card-header">
+          <div class="os-logo-wrap" aria-hidden="true">
+            <!-- Official Windows logo SVG -->
+            <svg width="28" height="28" viewBox="0 0 88 88" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0 12.402l35.687-4.86.016 34.423-35.67.203L0 12.402z" fill="#0078d4"/>
+              <path d="M39.89 6.965L87.94 0v41.527l-48.05.376V6.965z" fill="#0078d4"/>
+              <path d="M35.67 45.396l.028 34.452L.038 75.094l-.012-30.08 35.644.382z" fill="#0078d4"/>
+              <path d="M87.94 45.963l-.011 41.527-48.05-6.62-.068-34.85 48.13-.057z" fill="#0078d4"/>
+            </svg>
+          </div>
+          <span class="card-badge badge-paid">License Required</span>
+        </div>
+        <div>
+          <h3 class="card-name">Windows 11</h3>
+          <p class="card-version">Version 24H2 · Latest Stable · Microsoft</p>
+        </div>
+        <p class="card-desc">The most gaming-capable OS on the market. Native DirectX 12 support, the broadest software library, and modern UI built for touchscreen and desktop alike. Requires TPM 2.0.</p>
+        <div class="card-tags" aria-label="Tags">
+          <span class="tag">Gaming</span>
+          <span class="tag">Office</span>
+          <span class="tag">DirectX 12</span>
+          <span class="tag">TPM 2.0</span>
+          <span class="tag">64-bit</span>
+        </div>
+        <div class="card-footer">
+          <a class="dl-btn dl-win" href="windows11.html" aria-label="Download Windows 11 and view guide">
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+            Download + Guide
+          </a>
+          <a class="guide-link" href="windows11.html" aria-label="View Windows 11 install guide">
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+            Install Guide
+          </a>
+        </div>
+      </article>
+
+      <!-- Windows 10 -->
+      <article class="os-card reveal reveal-d2" data-os="win" data-s="windows 10 older hardware no tpm legacy compatible microsoft office stable work">
+        <div class="card-header">
+          <div class="os-logo-wrap" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 88 88" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0 12.402l35.687-4.86.016 34.423-35.67.203L0 12.402z" fill="#0078d4"/>
+              <path d="M39.89 6.965L87.94 0v41.527l-48.05.376V6.965z" fill="#0078d4"/>
+              <path d="M35.67 45.396l.028 34.452L.038 75.094l-.012-30.08 35.644.382z" fill="#0078d4"/>
+              <path d="M87.94 45.963l-.011 41.527-48.05-6.62-.068-34.85 48.13-.057z" fill="#0078d4"/>
+            </svg>
+          </div>
+          <span class="card-badge badge-paid">License Required</span>
+        </div>
+        <div>
+          <h3 class="card-name">Windows 10</h3>
+          <p class="card-version">Version 22H2 · Extended Support · Microsoft</p>
+        </div>
+        <p class="card-desc">The world's most-used OS. Works on hardware going back to 2012, supports both 32-bit and 64-bit processors, and doesn't require TPM. Supported with security patches until Oct 2025.</p>
+        <div class="card-tags" aria-label="Tags">
+          <span class="tag">Legacy HW</span>
+          <span class="tag">32 / 64-bit</span>
+          <span class="tag">No TPM</span>
+          <span class="tag">Stable</span>
+          <span class="tag">Office</span>
+        </div>
+        <div class="card-footer">
+          <a class="dl-btn dl-win" href="windows10.html" aria-label="Download Windows 10 and view guide">
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+            Download + Guide
+          </a>
+          <a class="guide-link" href="windows10.html">
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+            Install Guide
+          </a>
+        </div>
+      </article>
+
+      <!-- Ubuntu -->
+      <article class="os-card reveal reveal-d3" data-os="ubu" data-s="ubuntu linux free open source development programming privacy server lts beginner canonical">
+        <div class="card-header">
+          <div class="os-logo-wrap" aria-hidden="true">
+            <!-- Ubuntu circle of friends logo -->
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="12" r="11" fill="#e95420"/>
+              <circle cx="12" cy="12" r="2.8" fill="#fff"/>
+              <!-- Top circle -->
+              <circle cx="12" cy="4.2" r="2" fill="#fff"/>
+              <!-- Bottom-right circle -->
+              <circle cx="18.7" cy="15.8" r="2" fill="#fff"/>
+              <!-- Bottom-left circle -->
+              <circle cx="5.3" cy="15.8" r="2" fill="#fff"/>
+              <!-- Connecting arcs -->
+              <path d="M12 6.2A5.8 5.8 0 0116.7 9" stroke="#fff" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+              <path d="M17.3 13.8a5.8 5.8 0 01-1 4.6" stroke="#fff" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+              <path d="M7.4 18.4a5.8 5.8 0 01-1-4.6" stroke="#fff" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+              <path d="M7.3 9A5.8 5.8 0 0112 6.2" stroke="#fff" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <span class="card-badge badge-free">Free &amp; Open Source</span>
+        </div>
+        <div>
+          <h3 class="card-name">Ubuntu 24.04 LTS</h3>
+          <p class="card-version">Noble Numbat · LTS Until 2029 · Canonical</p>
+        </div>
+        <p class="card-desc">The most popular Linux distribution. Best-in-class developer tooling, massive community support, excellent hardware compatibility, and zero licensing cost. Free forever.</p>
+        <div class="card-tags" aria-label="Tags">
+          <span class="tag">Free</span>
+          <span class="tag">Development</span>
+          <span class="tag">Privacy</span>
+          <span class="tag">LTS</span>
+          <span class="tag">Server Ready</span>
+        </div>
+        <div class="card-footer">
+          <a class="dl-btn dl-ubu" href="ubuntu.html" aria-label="Download Ubuntu and view guide">
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+            Download + Guide
+          </a>
+          <a class="guide-link" href="ubuntu.html">
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+            Install Guide
+          </a>
+        </div>
+      </article>
+
+      <!-- macOS -->
+      <article class="os-card reveal reveal-d1" data-os="mac" data-s="macos apple sequoia mac silicon design creative professional secure premium video music">
+        <div class="card-header">
+          <div class="os-logo-wrap" aria-hidden="true">
+            <!-- Apple logo -->
+            <svg width="24" height="28" viewBox="0 0 814 1000" fill="#555" xmlns="http://www.w3.org/2000/svg">
+              <path d="M788.1 340.9c-5.8 4.5-108.2 62.2-108.2 190.5 0 148.4 130.3 200.9 134.2 202.2-.6 3.2-20.7 71.9-68.7 141.9-42.8 61.6-87.5 123.1-155.5 123.1s-85.5-39.5-164-39.5c-76 0-103.7 40.8-165.9 40.8s-105-57.8-155.5-127.4C46 790.7 0 663 0 541.8c0-207.2 134.4-316.9 266.5-316.9 84.4 0 154.6 55.6 207.7 55.6 50.6 0 129.2-58.8 225.3-58.8zm-234.1-134.5c29.4-34.6 50.1-82.8 50.1-131 0-6.6-.5-13.3-1.5-19.9-47.2 1.8-103.3 31.8-137.4 74.9-28.4 33.6-53.3 83.4-53.3 133.4 0 7.2 1.2 14.5 1.7 16.8 2.9.5 7.6 1.1 12.3 1.1 42.5 0 96.4-28.6 128.1-75.3z"/>
+            </svg>
+          </div>
+          <span class="card-badge badge-mac">Mac Only</span>
+        </div>
+        <div>
+          <h3 class="card-name">macOS Sequoia</h3>
+          <p class="card-version">macOS 15 · Apple Silicon &amp; Intel · Apple</p>
+        </div>
+        <p class="card-desc">Apple's flagship OS delivers unmatched hardware-software integration. Best-in-class for creative professionals, video editing, and music production. Requires genuine Apple hardware.</p>
+        <div class="card-tags" aria-label="Tags">
+          <span class="tag">Apple Silicon</span>
+          <span class="tag">Creative</span>
+          <span class="tag">Secure</span>
+          <span class="tag">Mac Only</span>
+          <span class="tag">iCloud</span>
+        </div>
+        <div class="card-footer">
+          <a class="dl-btn dl-mac" href="macos.html" aria-label="Download macOS and view guide">
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+            Download + Guide
+          </a>
+          <a class="guide-link" href="macos.html">
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+            Install Guide
+          </a>
+        </div>
+      </article>
+
+      <!-- Linux Mint -->
+      <article class="os-card reveal reveal-d2" data-os="mint" data-s="linux mint free beginner old pc windows-like easy lightweight cinnamon switch from windows">
+        <div class="card-header">
+          <div class="os-logo-wrap" aria-hidden="true">
+            <!-- Linux Mint logo -->
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="12" r="11" fill="#00a550"/>
+              <circle cx="12" cy="12" r="7.5" fill="#87c232" opacity="0.35"/>
+              <circle cx="12" cy="12" r="4.5" fill="#fff" opacity="0.15"/>
+              <!-- Mint leaf detail -->
+              <path d="M12 5.5C8.4 5.5 5.5 8.4 5.5 12S8.4 18.5 12 18.5" stroke="#fff" stroke-width="1" fill="none" stroke-linecap="round" opacity="0.6"/>
+              <path d="M12 5.5C15.6 5.5 18.5 8.4 18.5 12S15.6 18.5 12 18.5" stroke="#fff" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+              <circle cx="12" cy="12" r="2" fill="#fff"/>
+              <line x1="12" y1="10" x2="12" y2="5.5" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <span class="card-badge badge-free">Free &amp; Open Source</span>
+        </div>
+        <div>
+          <h3 class="card-name">Linux Mint 22</h3>
+          <p class="card-version">Wilma · Cinnamon Edition · Linux Mint Team</p>
+        </div>
+        <p class="card-desc">The ideal Windows replacement. Familiar taskbar layout, runs brilliantly on machines over a decade old, and requires zero command-line knowledge. The gentlest Linux on-ramp available.</p>
+        <div class="card-tags" aria-label="Tags">
+          <span class="tag">Free</span>
+          <span class="tag">Beginner</span>
+          <span class="tag">Old PC</span>
+          <span class="tag">Windows-like</span>
+          <span class="tag">Lightweight</span>
+        </div>
+        <div class="card-footer">
+          <a class="dl-btn dl-mint" href="mint.html" aria-label="Download Linux Mint and view guide">
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+            Download + Guide
+          </a>
+          <a class="guide-link" href="mint.html">
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+            Install Guide
+          </a>
+        </div>
+      </article>
+
+      <!-- Fedora -->
+      <article class="os-card reveal reveal-d3" data-os="fed" data-s="fedora linux developer gnome fresh packages cutting edge red hat advanced programming">
+        <div class="card-header">
+          <div class="os-logo-wrap" aria-hidden="true">
+            <!-- Fedora logo -->
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="12" r="11" fill="#3c6eb4"/>
+              <!-- Fedora infinity/f shape simplified -->
+              <path d="M12 6.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11z" fill="none" stroke="#fff" stroke-width="1.2"/>
+              <path d="M12 9a3 3 0 110 6 3 3 0 010-6z" fill="#fff" opacity="0.9"/>
+              <path d="M12 6.5V12M12 12h5.5" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <span class="card-badge badge-free">Free &amp; Open Source</span>
+        </div>
+        <div>
+          <h3 class="card-name">Fedora 41</h3>
+          <p class="card-version">Workstation · GNOME 47 · Red Hat</p>
+        </div>
+        <p class="card-desc">Cutting-edge Linux with the very latest software packages. Sponsored by Red Hat, it's the proving ground for enterprise Linux. Ideal for developers who want bleeding-edge tools.</p>
+        <div class="card-tags" aria-label="Tags">
+          <span class="tag">Free</span>
+          <span class="tag">Developer</span>
+          <span class="tag">GNOME 47</span>
+          <span class="tag">Cutting Edge</span>
+          <span class="tag">SELinux</span>
+        </div>
+        <div class="card-footer">
+          <a class="dl-btn dl-fed" href="https://fedoraproject.org/workstation/download" target="_blank" rel="noopener noreferrer" aria-label="Download Fedora from official site">
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+            Official Site ↗
+          </a>
+        </div>
+      </article>
+
+    </div><!-- /os-grid -->
+  </div>
+</section>
+
+<!-- ══════════════════════════ MORE DISTROS ══════════════════════════ -->
+<section class="section" id="distros" aria-labelledby="distros-heading">
+  <div class="container">
+    <div class="section-header-center reveal">
+      <p class="section-label">
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20"/></svg>
+        Linux Ecosystem
+      </p>
+      <h2 class="section-title" id="distros-heading">More Linux <span class="highlight">Distributions</span></h2>
+      <p class="section-sub">The Linux world has a distribution for every skill level, use case, and philosophy. All free and open source.</p>
+    </div>
+
+    <div class="distro-grid">
+      <!-- Arch -->
+      <a class="distro-tile reveal" href="https://archlinux.org/download/" target="_blank" rel="noopener noreferrer" aria-label="Arch Linux download page">
+        <div class="distro-tile-logo" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2L3 20.5h18L12 2z" fill="#1793d1"/>
+            <path d="M12 6.5l6.2 12H5.8L12 6.5z" fill="#1793d1" opacity="0.4"/>
+            <path d="M12 10l3.5 8H8.5L12 10z" fill="white" opacity="0.9"/>
+          </svg>
+        </div>
+        <div class="distro-tile-info">
+          <div class="distro-tile-name">Arch Linux</div>
+          <div class="distro-tile-desc">Advanced · Full control</div>
+        </div>
+      </a>
+      <!-- Debian -->
+      <a class="distro-tile reveal reveal-d1" href="https://www.debian.org/distrib/" target="_blank" rel="noopener noreferrer">
+        <div class="distro-tile-logo" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10" fill="#d70a53" opacity="0.9"/>
+            <path d="M12 6.5c-3.5 0-6.5 2.5-6.5 5.5 0 2.8 2.5 5.1 5.5 5.5V15c-2-.4-3.5-2-3.5-3.5 0-2 2-3.5 4.5-3.5s4.5 1.8 4.5 4c0 1.5-1 2.8-2.5 3.3.5.2 1 .3 1.5.3 2.5-.8 4-3 4-5.1 0-3.5-3.5-6-7.5-6z" fill="#fff" opacity="0.9"/>
+          </svg>
+        </div>
+        <div class="distro-tile-info">
+          <div class="distro-tile-name">Debian 12</div>
+          <div class="distro-tile-desc">Rock solid · Server</div>
+        </div>
+      </a>
+      <!-- Pop OS -->
+      <a class="distro-tile reveal reveal-d2" href="https://pop.system76.com/" target="_blank" rel="noopener noreferrer">
+        <div class="distro-tile-logo" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="2" width="20" height="20" rx="5" fill="#ffa826"/>
+            <circle cx="12" cy="12" r="5" fill="white"/>
+            <circle cx="12" cy="12" r="2.5" fill="#ffa826"/>
+          </svg>
+        </div>
+        <div class="distro-tile-info">
+          <div class="distro-tile-name">Pop!_OS 22.04</div>
+          <div class="distro-tile-desc">Gaming · NVIDIA ready</div>
+        </div>
+      </a>
+      <!-- Kali -->
+      <a class="distro-tile reveal reveal-d3" href="https://www.kali.org/get-kali/" target="_blank" rel="noopener noreferrer">
+        <div class="distro-tile-logo" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10" fill="#2e7bc4"/>
+            <path d="M8 7l4 5 4-5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 12v6" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M9 15l3 3 3-3" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="distro-tile-info">
+          <div class="distro-tile-name">Kali Linux</div>
+          <div class="distro-tile-desc">Security · Pentesting</div>
+        </div>
+      </a>
+      <!-- Manjaro -->
+      <a class="distro-tile reveal" href="https://manjaro.org/download/" target="_blank" rel="noopener noreferrer">
+        <div class="distro-tile-logo" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="2" width="9" height="9" rx="1.5" fill="#35bf5c"/>
+            <rect x="13" y="2" width="9" height="9" rx="1.5" fill="#35bf5c"/>
+            <rect x="2" y="13" width="9" height="9" rx="1.5" fill="#35bf5c"/>
+          </svg>
+        </div>
+        <div class="distro-tile-info">
+          <div class="distro-tile-name">Manjaro</div>
+          <div class="distro-tile-desc">Arch-based · Friendly</div>
+        </div>
+      </a>
+      <!-- openSUSE -->
+      <a class="distro-tile reveal reveal-d1" href="https://www.opensuse.org/" target="_blank" rel="noopener noreferrer">
+        <div class="distro-tile-logo" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10" fill="#73ba25"/>
+            <path d="M7 12a5 5 0 0010 0 5 5 0 00-10 0z" fill="white" opacity="0.8"/>
+            <path d="M12 7v10M7 12h10" stroke="#73ba25" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="distro-tile-info">
+          <div class="distro-tile-name">openSUSE Leap</div>
+          <div class="distro-tile-desc">Enterprise DNA · Stable</div>
+        </div>
+      </a>
+      <!-- Zorin -->
+      <a class="distro-tile reveal reveal-d2" href="https://zorin.com/os/download/" target="_blank" rel="noopener noreferrer">
+        <div class="distro-tile-logo" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10" fill="#15a6f0"/>
+            <path d="M7.5 8.5h9l-9 7h9" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="distro-tile-info">
+          <div class="distro-tile-name">Zorin OS 17</div>
+          <div class="distro-tile-desc">Windows switchers</div>
+        </div>
+      </a>
+      <!-- Elementary -->
+      <a class="distro-tile reveal reveal-d3" href="https://elementary.io/" target="_blank" rel="noopener noreferrer">
+        <div class="distro-tile-logo" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10" fill="#64baff"/>
+            <circle cx="12" cy="12" r="5" fill="white"/>
+            <circle cx="12" cy="12" r="2.5" fill="#3689e6"/>
+          </svg>
+        </div>
+        <div class="distro-tile-info">
+          <div class="distro-tile-name">elementary OS</div>
+          <div class="distro-tile-desc">macOS-like · Beautiful</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════ QUIZ ══════════════════════════ -->
+<section class="section" id="quiz" aria-labelledby="quiz-heading">
+  <div class="container">
+    <div class="section-header-center reveal">
+      <p class="section-label">
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+        OS Recommendation Engine
+      </p>
+      <h2 class="section-title" id="quiz-heading">Which OS Is <span class="highlight">Right for You?</span></h2>
+      <p class="section-sub">Answer 6 questions about your actual needs and we'll recommend the best operating system with full reasoning.</p>
+    </div>
+
+    <div class="quiz-wrapper">
+      <div class="quiz-shell reveal">
+        <!-- Top bar -->
+        <div class="quiz-topbar" aria-hidden="true">
+          <div class="quiz-topbar-dots"><span></span><span></span><span></span></div>
+          <div class="quiz-topbar-title">os-recommendation-engine · v3.1.0</div>
+          <div class="quiz-topbar-status">READY</div>
+        </div>
+        <!-- Dynamic content -->
+        <div class="quiz-content" id="quiz-content" role="main" aria-live="polite"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════ INSTALL GUIDE ══════════════════════════ -->
+<section class="section" id="guide" aria-labelledby="guide-heading">
+  <div class="container">
+    <div class="section-header-center reveal">
+      <p class="section-label">
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13"/></svg>
+        Universal Deployment Guide
+      </p>
+      <h2 class="section-title" id="guide-heading">Install Any OS in <span class="highlight">6 Steps</span></h2>
+      <p class="section-sub">This guide works for Windows, Ubuntu, Linux Mint, and every major distribution. Follow it exactly and you cannot go wrong.</p>
+    </div>
+
+    <div class="steps-container">
+      <div class="step-row reveal">
+        <div class="step-node" aria-label="Step 1">01</div>
+        <div class="step-body">
+          <h3 class="step-title">Download the Official ISO File</h3>
+          <p class="step-text">Choose your OS from the cards above and click Download. You'll be redirected to the official vendor website. Download the ISO file — typically 1–5 GB depending on the OS. Never download from unofficial mirrors.</p>
+          <code class="step-code">Always verify the SHA256 checksum after downloading</code>
+        </div>
+      </div>
+
+      <div class="step-row reveal reveal-d1">
+        <div class="step-node" aria-label="Step 2">02</div>
+        <div class="step-body">
+          <h3 class="step-title">Back Up Your Existing Files First</h3>
+          <p class="step-text">A clean install will erase the target drive. Before you do anything else, copy your photos, documents, and important files to an external drive or cloud storage. Do not skip this step.</p>
+        </div>
+      </div>
+
+      <div class="step-row reveal reveal-d2">
+        <div class="step-node" aria-label="Step 3">03</div>
+        <div class="step-body">
+          <h3 class="step-title">Flash ISO to a USB Drive (8 GB+)</h3>
+          <p class="step-text">Use a USB 3.0 drive for best speed. Flash the ISO using one of these tools — they handle all partitioning automatically. Never just copy-paste the ISO file to the USB; you must flash it properly.</p>
+          <div class="step-links">
+            <a class="step-link" href="https://rufus.ie" target="_blank" rel="noopener noreferrer">
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+              Rufus (Windows)
+            </a>
+            <a class="step-link" href="https://etcher.balena.io" target="_blank" rel="noopener noreferrer">
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+              balenaEtcher (Mac/Linux)
+            </a>
+            <a class="step-link" href="https://www.ventoy.net" target="_blank" rel="noopener noreferrer">
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+              Ventoy (Multi-boot)
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="step-row reveal">
+        <div class="step-node" aria-label="Step 4">04</div>
+        <div class="step-body">
+          <h3 class="step-title">Enter BIOS / UEFI and Set Boot Order</h3>
+          <p class="step-text">Restart your computer and immediately press your BIOS key. Set USB as the first boot device. If installing Linux, also disable Secure Boot in the BIOS security settings.</p>
+          <code class="step-code">Common BIOS keys: F2 · F12 · DEL · ESC · F10</code>
+        </div>
+      </div>
+
+      <div class="step-row reveal reveal-d1">
+        <div class="step-node" aria-label="Step 5">05</div>
+        <div class="step-body">
+          <h3 class="step-title">Run the OS Installer</h3>
+          <p class="step-text">Boot from USB and follow the graphical installer. When asked about disk partitioning, choose "Erase disk and install" for a clean fresh start. The installer will guide you through language, timezone, and user account setup.</p>
+        </div>
+      </div>
+
+      <div class="step-row reveal reveal-d2">
+        <div class="step-node" aria-label="Step 6">06</div>
+        <div class="step-body">
+          <h3 class="step-title">First Boot — Update and Configure</h3>
+          <p class="step-text">Installation takes 10–30 minutes. When complete, remove the USB drive and restart. After first boot, run system updates immediately. For Linux, install your GPU drivers and any missing codecs.</p>
+          <code class="step-code">Ubuntu/Mint: sudo apt update &amp;&amp; sudo apt upgrade -y</code>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════ SYSTEM REQUIREMENTS ══════════════════════════ -->
+<section class="section" id="requirements" aria-labelledby="req-heading">
+  <div class="container">
+    <div class="section-header-center reveal">
+      <p class="section-label">
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        Hardware Compatibility
+      </p>
+      <h2 class="section-title" id="req-heading">System <span class="highlight">Requirements</span></h2>
+      <p class="section-sub">Check what each operating system needs from your hardware before committing to a download and install.</p>
+    </div>
+
+    <div class="checker-card reveal">
+      <div class="checker-tabs" role="tablist" aria-label="OS system requirements">
+        <button class="checker-tab active" role="tab" aria-selected="true"  onclick="showReqs('win11',this)">Windows 11</button>
+        <button class="checker-tab"        role="tab" aria-selected="false" onclick="showReqs('win10',this)">Windows 10</button>
+        <button class="checker-tab"        role="tab" aria-selected="false" onclick="showReqs('ubuntu',this)">Ubuntu</button>
+        <button class="checker-tab"        role="tab" aria-selected="false" onclick="showReqs('mint',this)">Linux Mint</button>
+      </div>
+      <div class="checker-body" id="req-body" role="tabpanel"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════ COMPARE ══════════════════════════ -->
+<section class="section" id="compare" aria-labelledby="compare-heading">
+  <div class="container">
+    <div class="section-header-center reveal">
+      <p class="section-label">
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm6 0V9a2 2 0 012-2h2a2 2 0 012 2v10"/></svg>
+        Feature Matrix
+      </p>
+      <h2 class="section-title" id="compare-heading">OS <span class="highlight">Comparison</span></h2>
+      <p class="section-sub">An honest, side-by-side look at the factors that actually matter when choosing an operating system.</p>
+    </div>
+
+    <div class="table-wrapper reveal">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Feature</th>
+            <th scope="col">
+              <div class="th-os-label">
+                <svg width="16" height="16" viewBox="0 0 88 88" fill="none"><path d="M0 12.4l35.7-4.86.016 34.42-35.67.2L0 12.4z" fill="#0078d4"/><path d="M39.9 7L87.9 0v41.5l-48 .38V7z" fill="#0078d4"/><path d="M35.7 45.4l.028 34.45-35.66-4.75-.01-30.08 35.64.38z" fill="#0078d4"/><path d="M87.9 46l-.01 41.5-48.05-6.62-.07-34.84 48.13-.06z" fill="#0078d4"/></svg>
+                Windows 11
+              </div>
+            </th>
+            <th scope="col">
+              <div class="th-os-label">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#e95420"/><circle cx="12" cy="12" r="2.8" fill="#fff"/><circle cx="12" cy="4.2" r="2" fill="#fff"/><circle cx="18.7" cy="15.8" r="2" fill="#fff"/><circle cx="5.3" cy="15.8" r="2" fill="#fff"/></svg>
+                Ubuntu
+              </div>
+            </th>
+            <th scope="col">
+              <div class="th-os-label">
+                <svg width="16" height="16" viewBox="0 0 814 1000" fill="#777"><path d="M788.1 340.9c-5.8 4.5-108.2 62.2-108.2 190.5 0 148.4 130.3 200.9 134.2 202.2-.6 3.2-20.7 71.9-68.7 141.9-42.8 61.6-87.5 123.1-155.5 123.1s-85.5-39.5-164-39.5c-76 0-103.7 40.8-165.9 40.8s-105-57.8-155.5-127.4C46 790.7 0 663 0 541.8c0-207.2 134.4-316.9 266.5-316.9 84.4 0 154.6 55.6 207.7 55.6 50.6 0 129.2-58.8 225.3-58.8zm-234.1-134.5c29.4-34.6 50.1-82.8 50.1-131 0-6.6-.5-13.3-1.5-19.9-47.2 1.8-103.3 31.8-137.4 74.9-28.4 33.6-53.3 83.4-53.3 133.4 0 7.2 1.2 14.5 1.7 16.8 2.9.5 7.6 1.1 12.3 1.1 42.5 0 96.4-28.6 128.1-75.3z"/></svg>
+                macOS
+              </div>
+            </th>
+            <th scope="col">
+              <div class="th-os-label">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#00a550"/><circle cx="12" cy="12" r="2" fill="#fff"/><line x1="12" y1="10" x2="12" y2="5.5" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg>
+                Linux Mint
+              </div>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Cost</td>
+            <td><span class="cell-mid"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/></svg>Paid / OEM</span></td>
+            <td><span class="cell-yes"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>Free</span></td>
+            <td><span class="cell-mid"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/></svg>Free (Mac only)</span></td>
+            <td><span class="cell-yes"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>Free</span></td>
+          </tr>
+          <tr>
+            <td>Beginner Friendly</td>
+            <td><span class="cell-yes"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>Very Good</span></td>
+            <td><span class="cell-mid"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/></svg>Good</span></td>
+            <td><span class="cell-yes"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>Very Good</span></td>
+            <td><span class="cell-yes"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>Best</span></td>
+          </tr>
+          <tr>
+            <td>Gaming</td>
+            <td><span class="cell-yes"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>Excellent</span></td>
+            <td><span class="cell-mid"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/></svg>Good (Proton)</span></td>
+            <td><span class="cell-no"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>Limited</span></td>
+            <td><span class="cell-mid"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/></svg>Good (Proton)</span></td>
+          </tr>
+          <tr>
+            <td>Privacy</td>
+            <td><span class="cell-no"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>Low</span></td>
+            <td><span class="cell-yes"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>High</span></td>
+            <td><span class="cell-mid"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/></svg>Medium</span></td>
+            <td><span class="cell-yes"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>High</span></td>
+          </tr>
+          <tr>
+            <td>Virus Risk</td>
+            <td><span class="cell-no"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>High</span></td>
+            <td><span class="cell-yes"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>Very Low</span></td>
+            <td><span class="cell-mid"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/></svg>Low</span></td>
+            <td><span class="cell-yes"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>Very Low</span></td>
+          </tr>
+          <tr>
+            <td>Old Hardware</td>
+            <td><span class="cell-no"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>Poor</span></td>
+            <td><span class="cell-yes"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>Great</span></td>
+            <td><span class="cell-no"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>Mac Only</span></td>
+            <td><span class="cell-yes"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>Excellent</span></td>
+          </tr>
+          <tr>
+            <td>Customisable</td>
+            <td><span class="cell-mid"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/></svg>Limited</span></td>
+            <td><span class="cell-yes"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>Very High</span></td>
+            <td><span class="cell-no"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>Low</span></td>
+            <td><span class="cell-yes"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>Very High</span></td>
+          </tr>
+          <tr>
+            <td>Software Library</td>
+            <td><span class="cell-yes"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>Largest</span></td>
+            <td><span class="cell-mid"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/></svg>Good</span></td>
+            <td><span class="cell-mid"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/></svg>Mac Ecosystem</span></td>
+            <td><span class="cell-mid"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/></svg>Good</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════ FAQ ══════════════════════════ -->
+<section class="section" id="faq" aria-labelledby="faq-heading">
+  <div class="container">
+    <div class="section-header-center reveal">
+      <p class="section-label">
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3m0 4h.01"/></svg>
+        Common Questions
+      </p>
+      <h2 class="section-title" id="faq-heading">Frequently Asked <span class="highlight">Questions</span></h2>
+    </div>
+
+    <div class="faq-list">
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          <div class="faq-q-left">
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 21h10M12 21V3m-4 4l4-4 4 4"/></svg>
+            What exactly is an ISO file?
+          </div>
+          <svg class="faq-chevron" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">An ISO file is a complete, byte-for-byte copy of an installation disk — like a digital version of the install DVD. You download it once, then use a tool like Rufus to write it to a USB drive. The USB then becomes a bootable installation device you can plug into any computer to install the OS.</div>
+      </div>
+
+      <div class="faq-item reveal reveal-d1">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          <div class="faq-q-left">
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg>
+            Will I lose my files if I install a new OS?
+          </div>
+          <svg class="faq-chevron" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">Yes — a clean install erases the drive partition it installs to. This is why Step 2 of our guide says to back up your files first, without exception. Copy everything you care about to an external hard drive or cloud storage (Google Drive, OneDrive, iCloud) before starting. There is no way to recover files after a clean install if you skip the backup.</div>
+      </div>
+
+      <div class="faq-item reveal reveal-d2">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          <div class="faq-q-left">
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-3.28"/></svg>
+            Can I switch back to Windows if I don't like Linux?
+          </div>
+          <svg class="faq-chevron" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">Absolutely. You can reinstall Windows at any time by downloading the ISO from Microsoft's official website using their Media Creation Tool, flashing it to USB with Rufus, and installing it the same way you installed Linux. Nothing is permanent. Many people dual-boot both Linux and Windows on the same machine so they can use whichever they prefer.</div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          <div class="faq-q-left">
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
+            Is Linux actually good for gaming in 2025?
+          </div>
+          <svg class="faq-chevron" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">Much better than most people expect. Steam's Proton compatibility layer runs thousands of Windows-only games on Linux with little to no configuration. Pop!_OS ships with NVIDIA drivers pre-installed. That said, if you play the very latest AAA titles or games with aggressive anti-cheat (like Valorant or PUBG), Windows 11 is still the safer choice for gaming. Linux gaming is excellent for 85%+ of the Steam library.</div>
+      </div>
+
+      <div class="faq-item reveal reveal-d1">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          <div class="faq-q-left">
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>
+            What size USB drive do I need?
+          </div>
+          <svg class="faq-chevron" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">For any Linux distribution, an 8 GB USB drive is more than enough. For Windows 10 or 11, use a minimum of 8 GB — though 16 GB is recommended to have breathing room. Always use a USB 3.0 drive or faster — a USB 2.0 drive can make the flashing process take 30+ minutes and booting painfully slow.</div>
+      </div>
+
+      <div class="faq-item reveal reveal-d2">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          <div class="faq-q-left">
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20"/></svg>
+            Which Linux is best for a complete beginner?
+          </div>
+          <svg class="faq-chevron" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">Linux Mint is our top recommendation for beginners. Its Cinnamon desktop looks and behaves almost identically to Windows, so the transition is extremely gentle. Ubuntu is a close second with a larger community and more tutorials online. Both have graphical software managers — you never need to touch a terminal for everyday tasks.</div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          <div class="faq-q-left">
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            Are your download links safe and official?
+          </div>
+          <svg class="faq-chevron" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">Yes — every single download button on this site links directly to the official vendor website: microsoft.com for Windows, ubuntu.com for Ubuntu, linuxmint.com for Mint, and apple.com for macOS. We never host files ourselves, never use mirrors, and never inject anything. This is the same URL you'd find by Googling each OS directly.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════ FOOTER ══════════════════════════ -->
+<footer class="footer" role="contentinfo">
   <div class="container">
     <div class="footer-grid">
+      <!-- Brand -->
       <div class="footer-brand">
-        <a class="logo" href="index.html">
-          <svg class="logo-flag" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="3" fill="#111"/><rect x="3" y="3" width="5" height="5" fill="#f0f0f0"/><rect x="8" y="3" width="5" height="5" fill="#e5001b"/><rect x="13" y="3" width="5" height="5" fill="#f0f0f0"/><rect x="18" y="3" width="5" height="5" fill="#e5001b"/><rect x="3" y="8" width="5" height="5" fill="#e5001b"/><rect x="8" y="8" width="5" height="5" fill="#f0f0f0"/><rect x="13" y="8" width="5" height="5" fill="#e5001b"/><rect x="18" y="8" width="5" height="5" fill="#f0f0f0"/><rect x="3" y="13" width="5" height="5" fill="#f0f0f0"/><rect x="8" y="13" width="5" height="5" fill="#e5001b"/><rect x="13" y="13" width="5" height="5" fill="#f0f0f0"/><rect x="18" y="13" width="5" height="5" fill="#e5001b"/><rect x="25" y="3" width="3" height="26" rx="1" fill="#e5001b"/></svg>
-          <span class="logo-text">OG<span>TOX</span></span>
+        <a class="footer-logo" href="index.html" aria-label="ISO Hub home">
+          <svg width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs><linearGradient id="fg" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse"><stop stop-color="#00d4ff"/><stop offset="1" stop-color="#818cf8"/></linearGradient></defs>
+            <circle cx="16" cy="16" r="13.5" stroke="url(#fg)" stroke-width="1.5"/>
+            <circle cx="16" cy="16" r="3.5" fill="url(#fg)"/>
+            <line x1="16" y1="2.5" x2="16" y2="7.5" stroke="url(#fg)" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="16" y1="24.5" x2="16" y2="29.5" stroke="url(#fg)" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="2.5" y1="16" x2="7.5" y2="16" stroke="url(#fg)" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="24.5" y1="16" x2="29.5" y2="16" stroke="url(#fg)" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+          <span class="footer-logo-text">ISO Hub</span>
         </a>
-        <p>Premium diecast collectibles curated by OGTOX. Authentic models. Fast shipping worldwide.</p>
-        <div class="footer-social">
-          <a class="soc-btn" href="#"><svg viewBox="0 0 24 24" fill="#777"><path d="M23 7s-.3-2-1.2-2.8c-1.1-1.2-2.4-1.2-3-1.3C16.2 2.8 12 2.8 12 2.8s-4.2 0-6.8.1c-.6.1-1.9.1-3 1.3C1.3 5 1 7 1 7S.7 9.1.7 11.3v2c0 2.1.3 4.3.3 4.3s.3 2 1.2 2.8c1.1 1.2 2.6 1.1 3.3 1.2C7.5 21.8 12 21.8 12 21.8s4.2 0 6.8-.2c.6-.1 1.9-.1 3-1.3.9-.8 1.2-2.8 1.2-2.8s.3-2.1.3-4.3v-2C23.3 9.1 23 7 23 7zM9.7 15.5V8.4l8.1 3.6-8.1 3.5z"/></svg></a>
-          <a class="soc-btn" href="#"><svg viewBox="0 0 24 24" fill="#777"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" fill="#080808"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="#080808" stroke-width="1.5"/></svg></a>
-        </div>
+        <p class="footer-desc">The #1 resource for official OS downloads and step-by-step installation guides. Every link goes directly to the official vendor. No mirrors, no trackers, no ads.</p>
+        <!-- Instagram Credit -->
+        <a class="footer-credit" href="https://instagram.com/prtofno" target="_blank" rel="noopener noreferrer" aria-label="Follow @prtofno on Instagram">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+          </svg>
+          Designed by @prtofno
+        </a>
       </div>
+
+      <!-- Downloads column -->
       <div class="footer-col">
-        <h4>Shop</h4>
-        <ul>
-          <li><a href="#shop">Hot Wheels</a></li>
-          <li><a href="#shop">Majorette</a></li>
-          <li><a href="#shop">Matchbox</a></li>
-          <li><a href="#shop">Rare Finds</a></li>
-        </ul>
+        <h4>Downloads</h4>
+        <a href="windows11.html">Windows 11</a>
+        <a href="windows10.html">Windows 10</a>
+        <a href="ubuntu.html">Ubuntu Linux</a>
+        <a href="mint.html">Linux Mint</a>
+        <a href="macos.html">macOS Sequoia</a>
       </div>
+
+      <!-- Resources column -->
       <div class="footer-col">
-        <h4>Account</h4>
-        <ul>
-          <li><a href="login.html">Login</a></li>
-          <li><a href="login.html#register">Register</a></li>
-          <li><a href="admin.html">Admin Panel</a></li>
-          <li><a href="#">My Orders</a></li>
-        </ul>
+        <h4>Resources</h4>
+        <a href="#guide">Install Guide</a>
+        <a href="#quiz">OS Quiz</a>
+        <a href="#compare">Compare OS</a>
+        <a href="#distros">All Distros</a>
+        <a href="#faq">FAQ</a>
+        <a href="#requirements">System Requirements</a>
       </div>
     </div>
+
     <div class="footer-bottom">
-      <span>© 2025 OGTOX Shop</span>
-      <span>Made for collectors 🏁</span>
+      <span class="footer-copy">© 2025 ISO Hub. All rights reserved.</span>
+      <span class="footer-disclaimer">Not affiliated with Microsoft, Canonical, Apple Inc., or Red Hat. All downloads redirect to official vendor sources.</span>
     </div>
   </div>
 </footer>
 
-<!-- CART DRAWER -->
-<div class="cart-bg" id="cartBg" onclick="toggleCart()"></div>
-<div class="cart-drawer" id="cartDrawer">
-  <div class="cart-head">
-    <div class="cart-head-title">YOUR CART</div>
-    <button class="cart-close" onclick="toggleCart()">✕</button>
-  </div>
-  <div class="cart-body" id="cartBody"></div>
-  <div class="cart-foot" id="cartFoot" style="display:none">
-    <div class="cart-ship"><span>Shipping</span><span id="cartShip" class="free">FREE</span></div>
-    <div class="cart-tot"><span class="cart-tot-lbl">Total</span><span class="cart-tot-val" id="cartTotVal">$0.00</span></div>
-    <button class="btn-checkout">Proceed to Checkout →</button>
-  </div>
-</div>
-
-<div class="toast-wrap" id="toastWrap"></div>
-
+<!-- ═══════════════════════════════════════════════════
+   JAVASCRIPT
+═══════════════════════════════════════════════════ -->
 <script>
-const PRODUCTS=[
-  {id:1,brand:'Hot Wheels',name:'Ferrari F40 Heritage',scale:'1:64',cond:'Mint',price:6.99,badge:'new',cat:'hw'},
-  {id:2,brand:'Hot Wheels',name:'Porsche 911 GT3 RS',scale:'1:64',cond:'Sealed',price:8.49,badge:'hot',cat:'hw'},
-  {id:3,brand:'Hot Wheels',name:'McLaren Senna GTR',scale:'1:64',cond:'Mint',price:7.99,badge:'hot',cat:'hw'},
-  {id:4,brand:'Hot Wheels',name:'Bugatti Chiron SS',scale:'1:64',cond:'Sealed',price:12.99,badge:'ltd',cat:'hw'},
-  {id:5,brand:'Majorette',name:'Lamborghini Aventador',scale:'1:64',cond:'Mint',price:5.99,badge:'',cat:'mj'},
-  {id:6,brand:'Majorette',name:'BMW M4 Competition',scale:'1:64',cond:'Near Mint',price:5.49,badge:'',cat:'mj'},
-  {id:7,brand:'Majorette',name:'Toyota GR Supra',scale:'1:64',cond:'Mint',price:5.99,badge:'new',cat:'mj'},
-  {id:8,brand:'Matchbox',name:'Ford Mustang GT500',scale:'1:64',cond:'Mint',price:3.99,badge:'',cat:'mb'},
-  {id:9,brand:'Matchbox',name:'Chevrolet Camaro SS',scale:'1:64',cond:'Near Mint',price:4.49,badge:'new',cat:'mb'},
-  {id:10,brand:'Matchbox',name:'Dodge Charger R/T',scale:'1:64',cond:'Mint',price:3.99,badge:'',cat:'mb'},
-  {id:11,brand:'Tomica',name:'Honda NSX Type-R',scale:'1:57',cond:'Near Mint',price:9.99,badge:'',cat:'tm'},
-  {id:12,brand:'Tomica',name:'Nissan GT-R NISMO',scale:'1:57',cond:'Mint',price:10.99,badge:'hot',cat:'tm'},
-  {id:13,brand:'Other',name:'RLC Special Edition',scale:'1:64',cond:'Sealed',price:29.99,badge:'ltd',cat:'rare'},
-  {id:14,brand:'Other',name:'Tomica Heritage NSX',scale:'1:64',cond:'Mint',price:14.99,badge:'new',cat:'rare'},
+'use strict';
+
+/* ── HAMBURGER / DRAWER ── */
+const hbtn   = document.getElementById('hbtn');
+const drawer = document.getElementById('drawer');
+
+hbtn.addEventListener('click', () => {
+  const open = drawer.classList.toggle('open');
+  hbtn.classList.toggle('open', open);
+  hbtn.setAttribute('aria-expanded', open);
+  document.body.style.overflow = open ? 'hidden' : '';
+});
+
+function closeDrawer() {
+  drawer.classList.remove('open');
+  hbtn.classList.remove('open');
+  hbtn.setAttribute('aria-expanded', 'false');
+  document.body.style.overflow = '';
+}
+
+/* ── SCROLL REVEAL ── */
+const revealObserver = new IntersectionObserver(
+  entries => entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('vis');
+      revealObserver.unobserve(e.target);
+    }
+  }),
+  { threshold: 0.07, rootMargin: '0px 0px -40px 0px' }
+);
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+/* ── SEARCH ── */
+const SEARCH_INDEX = [
+  { name:'Windows 11',       href:'windows11.html', color:'#0078d4', meta:'Gaming · Office · TPM 2.0',        tags:['windows','gaming','office','directx','tpm','new','modern','microsoft','productivity'] },
+  { name:'Windows 10',       href:'windows10.html', color:'#0078d4', meta:'Legacy · No TPM · 32/64-bit',      tags:['windows','old','legacy','no tpm','32bit','compatible','stable','office'] },
+  { name:'Ubuntu 24.04 LTS', href:'ubuntu.html',    color:'#e95420', meta:'Free · Development · Privacy',     tags:['ubuntu','linux','free','development','programming','privacy','server','lts','canonical','beginner'] },
+  { name:'macOS Sequoia',    href:'macos.html',     color:'#777',    meta:'Apple · Creative · Secure',        tags:['mac','macos','apple','creative','design','secure','silicon','icloud','video','music'] },
+  { name:'Linux Mint 22',    href:'mint.html',      color:'#00a550', meta:'Beginner · Old PC · Windows-like', tags:['mint','linux','free','beginner','old pc','lightweight','windows-like','switch','cinnamon'] },
 ];
 
-const LOGOS={
-  'Hot Wheels':'<svg viewBox="0 0 90 20"><path d="M2 17C2 17 5 8 9 7C7 11 7.5 14.5 10 13.5C8.5 17 10.5 19 13 16C11.5 21 6 21 2 17Z" fill="#e5001b"/><path d="M6.5 16C6.5 16 8.5 10 11 9C9.5 13 10 16 12 15Z" fill="#ff6600"/><text x="16" y="15" font-family="Impact,sans-serif" font-size="12" fill="#e5001b" letter-spacing="1">HOT WHEELS</text></svg>',
-  'Majorette':'<svg viewBox="0 0 90 20"><rect width="90" height="20" rx="2" fill="#FFD700"/><text x="45" y="14" font-family="Impact,sans-serif" font-size="11" fill="#111" text-anchor="middle">MAJORETTE</text><rect width="90" height="4" rx="1" fill="#e60000"/><rect y="16" width="90" height="4" rx="1" fill="#e60000"/></svg>',
-  'Matchbox':'<svg viewBox="0 0 90 20"><rect width="90" height="20" rx="2" fill="#003087"/><text x="45" y="14" font-family="Impact,sans-serif" font-size="11" fill="#fff" text-anchor="middle">MATCHBOX</text></svg>',
-  'Tomica':'<svg viewBox="0 0 75 20"><rect width="75" height="20" rx="2" fill="#e5001b"/><text x="37" y="14" font-family="Impact,sans-serif" font-size="12" fill="#fff" text-anchor="middle" letter-spacing="1">TOMICA</text></svg>',
-  'Other':'<svg viewBox="0 0 55 20"><polygon points="27,1 54,19 0,19" fill="none" stroke="#c9a84c" stroke-width="1.5"/><text x="27" y="15" font-family="Impact,sans-serif" font-size="7" fill="#c9a84c" text-anchor="middle">RARE</text></svg>',
+const searchInput    = document.getElementById('searchInput');
+const searchDropdown = document.getElementById('search-dropdown');
+
+function escapeHtml(str) {
+  return str.replace(/[&<>"']/g, m => ({
+    '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
+  })[m]);
+}
+
+function highlightMatch(text, q) {
+  if (!q) return escapeHtml(text);
+  const re = new RegExp('(' + q.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'gi');
+  return escapeHtml(text).replace(re, '<mark class="search-match">$1</mark>');
+}
+
+function doSearch(raw) {
+  const q = raw.trim().toLowerCase();
+
+  // Filter cards
+  document.querySelectorAll('.os-card').forEach(card => {
+    if (!q) { card.classList.remove('hidden'); return; }
+    const haystack = (card.innerText + ' ' + (card.dataset.s || '')).toLowerCase();
+    card.classList.toggle('hidden', !haystack.includes(q));
+  });
+
+  // Dropdown
+  if (!q) { searchDropdown.classList.remove('show'); return; }
+
+  const matches = SEARCH_INDEX.filter(item =>
+    item.name.toLowerCase().includes(q) ||
+    item.meta.toLowerCase().includes(q) ||
+    item.tags.some(t => t.includes(q))
+  );
+
+  if (!matches.length) {
+    searchDropdown.innerHTML = `<div class="search-empty">No results for "${escapeHtml(raw)}"</div>`;
+  } else {
+    searchDropdown.innerHTML = matches.map(m => `
+      <a class="search-result" href="${m.href}" role="option">
+        <span class="search-result-dot" style="background:${m.color}" aria-hidden="true"></span>
+        <span class="search-result-name">${highlightMatch(m.name, q)}</span>
+        <span class="search-result-meta">${escapeHtml(m.meta)}</span>
+      </a>
+    `).join('');
+  }
+  searchDropdown.classList.add('show');
+}
+
+searchInput.addEventListener('input', e => doSearch(e.target.value));
+searchInput.addEventListener('focus', () => { if (searchInput.value) doSearch(searchInput.value); });
+document.addEventListener('click', e => {
+  if (!e.target.closest('.hero-search')) {
+    searchDropdown.classList.remove('show');
+  }
+});
+// Keyboard shortcut ⌘K / Ctrl+K
+document.addEventListener('keydown', e => {
+  if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+    e.preventDefault();
+    searchInput.focus();
+    searchInput.select();
+  }
+  if (e.key === 'Escape') { searchDropdown.classList.remove('show'); searchInput.blur(); }
+});
+
+/* ── SYSTEM REQUIREMENTS ── */
+const REQ_DATA = {
+  win11: [
+    { label:'CPU',      value:'1 GHz+ · 2 cores',  note:'64-bit processor only' },
+    { label:'RAM',      value:'4 GB min',            note:'8 GB recommended' },
+    { label:'Storage',  value:'64 GB',               note:'SSD strongly recommended' },
+    { label:'TPM',      value:'TPM 2.0',             note:'Check in BIOS settings' },
+    { label:'GPU',      value:'DirectX 12',          note:'WDDM 2.0 driver required' },
+    { label:'Display',  value:'720p / 9" min',       note:'HD display recommended' },
+  ],
+  win10: [
+    { label:'CPU',      value:'1 GHz+',              note:'32-bit or 64-bit' },
+    { label:'RAM',      value:'2 GB (64-bit)',        note:'1 GB for 32-bit edition' },
+    { label:'Storage',  value:'32 GB',               note:'More needed for updates' },
+    { label:'TPM',      value:'Not Required',        note:'No TPM check on install' },
+    { label:'GPU',      value:'DirectX 9+',          note:'WDDM 1.0 driver' },
+    { label:'Display',  value:'800×600 min',         note:'1080p recommended' },
+  ],
+  ubuntu: [
+    { label:'CPU',      value:'2 GHz dual-core',     note:'64-bit required' },
+    { label:'RAM',      value:'4 GB',                note:'8 GB for development' },
+    { label:'Storage',  value:'25 GB',               note:'More for apps & files' },
+    { label:'GPU',      value:'Any GPU',             note:'Open-source drivers incl.' },
+    { label:'USB',      value:'8 GB USB',            note:'USB 3.0 recommended' },
+    { label:'Secure Boot', value:'Disable',          note:'In BIOS before install' },
+  ],
+  mint: [
+    { label:'CPU',      value:'1 GHz x86',           note:'32 or 64-bit supported' },
+    { label:'RAM',      value:'2 GB min',             note:'4 GB recommended' },
+    { label:'Storage',  value:'20 GB',               note:'Smallest requirement' },
+    { label:'GPU',      value:'Any GPU',             note:'Very broad compatibility' },
+    { label:'USB',      value:'4 GB USB',            note:'Small ISO ~2.7 GB' },
+    { label:'Old HW',   value:'Excellent',           note:'Runs on decade-old PCs' },
+  ],
 };
 
-// Lightweight car icon - one simple SVG shape per product, no heavy path generation
-const PALETTE=[['#e5001b','#8a0010'],['#f5f0e0','#b0a880'],['#ff7a00','#993300'],['#1a3a6b','#0a1a3b'],['#f5c300','#8a6e00'],['#2244cc','#0a1a6b'],['#cc2200','#660a00'],['#1133aa','#061266'],['#cc8800','#664400'],['#333','#111'],['#eee','#aaa'],['#e5001b','#7a0010'],['#c9a84c','#6b5220'],['#2a2a6b','#0a0a2a']];
+function showReqs(os, btn) {
+  document.querySelectorAll('.checker-tab').forEach(t => {
+    t.classList.remove('active');
+    t.setAttribute('aria-selected', 'false');
+  });
+  btn.classList.add('active');
+  btn.setAttribute('aria-selected', 'true');
 
-function carIcon(id){
-  const[c1,c2]=PALETTE[(id-1)%PALETTE.length];
-  const g='g'+id;
-  return`<svg viewBox="0 0 200 90" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="${g}" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="${c1}"/><stop offset="100%" stop-color="${c2}"/></linearGradient></defs><ellipse cx="100" cy="82" rx="80" ry="5" fill="rgba(0,0,0,.4)"/><circle cx="48" cy="68" r="13" fill="#1a1a1a"/><circle cx="48" cy="68" r="8" fill="#2a2a2a"/><circle cx="148" cy="68" r="13" fill="#1a1a1a"/><circle cx="148" cy="68" r="8" fill="#2a2a2a"/><path d="M30 62 L34 44 Q37 33 52 30 L82 23 Q92 13 102 13 L128 13 Q144 15 156 27 L172 40 Q178 48 179 58 L181 62Z" fill="url(#${g})"/><path d="M80 25 L86 7 Q93 0 104 0 L124 0 Q134 1 140 11 L148 23Z" fill="${c2}"/><path d="M82 23 L87 8 Q94 1 104 1 L122 1 Q131 3 136 12 L144 21Z" fill="rgba(160,220,250,.72)"/><line x1="110" y1="0" x2="108" y2="24" stroke="${c2}" stroke-width="1.5"/><ellipse cx="172" cy="42" rx="7" ry="4" fill="#ffe" opacity=".9"/><ellipse cx="172" cy="42" rx="4" ry="2.5" fill="#fff"/><rect x="28" y="38" width="10" height="8" rx="1" fill="#c00" opacity=".9"/></svg>`;
+  const data = REQ_DATA[os];
+  document.getElementById('req-body').innerHTML = `
+    <div class="req-grid">
+      ${data.map(r => `
+        <div class="req-item">
+          <div class="req-label">${r.label}</div>
+          <div class="req-value">${r.value}</div>
+          <div class="req-note">${r.note}</div>
+        </div>
+      `).join('')}
+    </div>
+  `;
 }
+window.showReqs = showReqs;
+// Init
+showReqs('win11', document.querySelector('.checker-tab'));
 
-let cart=JSON.parse(localStorage.getItem('ogtox_cart')||'[]');
-let curFilter='all';
-
-function renderProducts(){
-  const data=curFilter==='all'?PRODUCTS:PRODUCTS.filter(p=>p.cat===curFilter);
-  document.getElementById('pgrid').innerHTML=data.map(p=>{
-    const b=p.badge?`<span class="pcard-badge badge-${p.badge}">${p.badge==='hot'?'🔥 HOT':p.badge==='ltd'?'💎 LTD':'✨ NEW'}</span>`:'';
-    return`<div class="pcard reveal on"><div class="pcard-img">${carIcon(p.id)}${b}<div class="pcard-logo">${LOGOS[p.brand]||''}</div></div><div class="pcard-body"><div class="pcard-brand">${p.brand}</div><div class="pcard-name">${p.name}</div><div class="pcard-tags"><span class="ptag">${p.scale}</span><span class="ptag">${p.cond}</span></div><div class="pcard-foot"><div class="pcard-price"><span class="cur">$</span>${p.price.toFixed(2)}</div><button class="btn-add" onclick="addToCart(${p.id})">+ Add</button></div></div></div>`;
-  }).join('');
-}
-
-function filterBy(f,btn){
-  curFilter=f;
-  document.querySelectorAll('.fbtn,.brand-chip').forEach(b=>b.classList.remove('active'));
-  if(btn)btn.classList.add('active');
-  renderProducts();
-}
-
-function addToCart(id){
-  const p=PRODUCTS.find(x=>x.id===id);
-  const ex=cart.find(c=>c.id===id);
-  if(ex)ex.qty++;else cart.push({...p,qty:1});
-  localStorage.setItem('ogtox_cart',JSON.stringify(cart));
-  updateCartUI();
-  toast('Added! 🏎',p.name);
-  const n=document.getElementById('cartN');
-  n.style.transform='scale(1.5)';setTimeout(()=>n.style.transform='',250);
-}
-function removeFromCart(id){cart=cart.filter(c=>c.id!==id);localStorage.setItem('ogtox_cart',JSON.stringify(cart));updateCartUI();}
-function changeQty(id,d){const it=cart.find(c=>c.id===id);if(!it)return;it.qty+=d;if(it.qty<1){removeFromCart(id);return;}localStorage.setItem('ogtox_cart',JSON.stringify(cart));updateCartUI();}
-
-function updateCartUI(){
-  const count=cart.reduce((s,c)=>s+c.qty,0);
-  const sub=cart.reduce((s,c)=>s+c.price*c.qty,0);
-  const ship=sub>=30||!cart.length?0:4.99;
-  document.getElementById('cartN').textContent=count;
-  const body=document.getElementById('cartBody');
-  const foot=document.getElementById('cartFoot');
-  if(!cart.length){
-    body.innerHTML='<div class="cart-empty">🛒<br><br>Your cart is empty</div>';
-    foot.style.display='none';
-  }else{
-    body.innerHTML=cart.map(c=>`<div class="cart-item"><div class="ci-img">${carIcon(c.id)}</div><div class="ci-info"><div class="ci-brand">${c.brand}</div><div class="ci-name">${c.name}</div><div class="ci-price">$${(c.price*c.qty).toFixed(2)}</div><div class="ci-qty"><button class="ci-qbtn" onclick="changeQty(${c.id},-1)">−</button><span class="ci-qnum">${c.qty}</span><button class="ci-qbtn" onclick="changeQty(${c.id},1)">+</button></div></div><button class="ci-del" onclick="removeFromCart(${c.id})">✕</button></div>`).join('');
-    foot.style.display='block';
-    document.getElementById('cartShip').textContent=ship===0?'FREE':'$'+ship.toFixed(2);
-    document.getElementById('cartShip').className=ship===0?'free':'';
-    document.getElementById('cartTotVal').textContent='$'+(sub+ship).toFixed(2);
+/* ── FAQ ── */
+function toggleFaq(btn) {
+  const answer = btn.nextElementSibling;
+  const isOpen = answer.classList.contains('open');
+  document.querySelectorAll('.faq-answer.open').forEach(a => a.classList.remove('open'));
+  document.querySelectorAll('.faq-q.open').forEach(b => {
+    b.classList.remove('open');
+    b.setAttribute('aria-expanded', 'false');
+  });
+  if (!isOpen) {
+    answer.classList.add('open');
+    btn.classList.add('open');
+    btn.setAttribute('aria-expanded', 'true');
   }
 }
-function toggleCart(){document.getElementById('cartBg').classList.toggle('open');document.getElementById('cartDrawer').classList.toggle('open');}
-function toast(title,msg){const w=document.getElementById('toastWrap');const t=document.createElement('div');t.className='toast';t.innerHTML=`<div class="toast-title">${title}</div><div class="toast-msg">${msg}</div>`;w.appendChild(t);requestAnimationFrame(()=>requestAnimationFrame(()=>t.classList.add('show')));setTimeout(()=>{t.classList.remove('show');setTimeout(()=>t.remove(),300);},2800);}
-function doNL(){const e=document.getElementById('nlEmail');if(!e.value)return;toast('Subscribed!🎉',`We'll notify ${e.value}`);e.value='';}
-function toggleMenu(){document.getElementById('ham').classList.toggle('open');document.getElementById('mobMenu').classList.toggle('open');}
+window.toggleFaq = toggleFaq;
 
-// Scroll reveal — passive IntersectionObserver only
-const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('on');obs.unobserve(x.target);}}),{threshold:0.06,rootMargin:'0px 0px -20px 0px'});
-document.querySelectorAll('.reveal:not(.on)').forEach(e=>obs.observe(e));
+/* ══════════════════════════════════════════════════
+   QUIZ ENGINE
+══════════════════════════════════════════════════ */
+const QUESTIONS = [
+  {
+    q: 'What will you mainly use this computer for?',
+    hint: 'Choose the option that fits your primary daily use',
+    opts: [
+      { label: 'Gaming — PC games are my main activity',              icon: 'gaming',  scores: { win:4, ubu:1, mac:0, mint:1 } },
+      { label: 'Office work — documents, spreadsheets, email',        icon: 'office',  scores: { win:3, ubu:2, mac:3, mint:2 } },
+      { label: 'Programming & software development',                  icon: 'code',    scores: { win:2, ubu:4, mac:3, mint:1 } },
+      { label: 'Casual use — browsing, video, social media',          icon: 'casual',  scores: { win:2, ubu:2, mac:2, mint:3 } },
+    ],
+  },
+  {
+    q: 'How old is the computer you want to install on?',
+    hint: 'This helps match you to an OS your hardware can run well',
+    opts: [
+      { label: 'Brand new (bought in 2022 or later)',        icon: 'new',     scores: { win:4, ubu:2, mac:2, mint:1 } },
+      { label: 'A few years old (2017–2021)',                icon: 'mid',     scores: { win:3, ubu:3, mac:1, mint:2 } },
+      { label: 'Old machine (bought before 2017)',           icon: 'old',     scores: { win:0, ubu:2, mac:0, mint:4 } },
+      { label: "It's an Apple Mac (any age)",                icon: 'mac',     scores: { win:0, ubu:0, mac:5, mint:0 } },
+    ],
+  },
+  {
+    q: 'How comfortable are you with computers in general?',
+    hint: 'Be honest — there\'s no wrong answer here',
+    opts: [
+      { label: 'Beginner — I only do basic tasks',           icon: 'beginner', scores: { win:3, ubu:1, mac:3, mint:4 } },
+      { label: 'Intermediate — I know my way around',        icon: 'inter',    scores: { win:3, ubu:2, mac:2, mint:3 } },
+      { label: 'Advanced — I\'m comfortable troubleshooting',icon: 'advanced', scores: { win:2, ubu:4, mac:2, mint:2 } },
+      { label: 'Developer / IT professional',                icon: 'pro',      scores: { win:1, ubu:5, mac:3, mint:1 } },
+    ],
+  },
+  {
+    q: 'Do you need to run specific Windows-only software?',
+    hint: 'Examples: Adobe Photoshop (full), MS Office, AutoCAD, specific games',
+    opts: [
+      { label: 'Yes — I rely on Windows-only apps daily',     icon: 'win-dep', scores: { win:5, ubu:0, mac:1, mint:0 } },
+      { label: 'Sometimes — but I could use web alternatives',icon: 'partial', scores: { win:3, ubu:2, mac:2, mint:2 } },
+      { label: 'No — I mainly use browser-based tools',      icon: 'web',     scores: { win:2, ubu:3, mac:3, mint:3 } },
+      { label: 'No — I want to move away from Windows apps', icon: 'free',    scores: { win:0, ubu:4, mac:2, mint:4 } },
+    ],
+  },
+  {
+    q: 'How important is privacy and data security to you?',
+    hint: 'Some OS collect more usage data than others',
+    opts: [
+      { label: 'Not a concern for me',                         icon: 'none',   scores: { win:3, ubu:2, mac:2, mint:1 } },
+      { label: 'Somewhat important',                           icon: 'some',   scores: { win:2, ubu:3, mac:2, mint:2 } },
+      { label: 'Very important — I want minimal data sharing', icon: 'high',   scores: { win:0, ubu:4, mac:1, mint:4 } },
+      { label: 'Critical — I need maximum privacy',            icon: 'max',    scores: { win:0, ubu:3, mac:0, mint:3 } },
+    ],
+  },
+  {
+    q: 'What is your budget for the operating system itself?',
+    hint: 'Some OS require a paid license, others are completely free',
+    opts: [
+      { label: 'I want a completely free OS',                  icon: 'gratis', scores: { win:1, ubu:4, mac:0, mint:4 } },
+      { label: 'I already have a Windows license',             icon: 'key',    scores: { win:5, ubu:0, mac:0, mint:0 } },
+      { label: "I'm willing to pay for the right OS",         icon: 'pay',    scores: { win:3, ubu:1, mac:4, mint:1 } },
+      { label: 'No preference — best fit matters most',        icon: 'any',    scores: { win:2, ubu:3, mac:2, mint:3 } },
+    ],
+  },
+];
 
-// About grid responsive
-function setAboutGrid(){const g=document.getElementById('aboutGrid');if(g)g.style.gridTemplateColumns=window.innerWidth>=640?'1fr 1fr':'1fr';}
-setAboutGrid();
-window.addEventListener('resize',setAboutGrid,{passive:true});
+const RESULTS = {
+  win: {
+    name: 'Windows 11',
+    accentColor: '#0078d4',
+    href: 'windows11.html',
+    btnClass: 'dl-win',
+    summary: 'Your needs — gaming, Windows-specific software, existing license, or new hardware — make Windows 11 the clear choice. It has the largest software library on earth, the best gaming ecosystem with DirectX 12, and the most driver support for new peripherals.',
+    reasons: ['Best gaming compatibility (DirectX 12, Xbox Game Pass)', 'Widest software library of any OS', 'Excellent hardware driver support', 'Familiar interface — zero learning curve'],
+  },
+  ubu: {
+    name: 'Ubuntu 24.04',
+    accentColor: '#e95420',
+    href: 'ubuntu.html',
+    btnClass: 'dl-ubu',
+    summary: 'Your developer mindset, privacy focus, and openness to new tools makes Ubuntu the ideal match. It\'s the world\'s most popular Linux distribution — powerful, completely free, highly secure, and backed by the largest Linux community on the planet.',
+    reasons: ['First-class developer tools (Python, Node, Docker built-in)', 'Free forever — zero licensing cost', 'Strong privacy: no telemetry by default', '5-year LTS support until 2029'],
+  },
+  mac: {
+    name: 'macOS Sequoia',
+    accentColor: '#555',
+    href: 'macos.html',
+    btnClass: 'dl-mac',
+    summary: 'Your priorities — polished experience, creative work, security, and willingness to invest — align perfectly with macOS. Apple\'s hardware-software integration is unmatched. If you already have a Mac, macOS Sequoia is simply the best OS for it.',
+    reasons: ['Unmatched hardware-software integration', 'Best-in-class for video, music, and creative work', 'Industry-leading security and privacy', 'Rock-solid stability — very few crashes'],
+  },
+  mint: {
+    name: 'Linux Mint 22',
+    accentColor: '#00a550',
+    href: 'mint.html',
+    btnClass: 'dl-mint',
+    summary: 'Your situation — older hardware, beginner comfort level, privacy priority, and wanting a free OS — makes Linux Mint the perfect fit. Its Cinnamon desktop looks and feels like Windows, making the transition seamless. It runs beautifully on hardware others have given up on.',
+    reasons: ['Familiar Windows-like interface — almost no learning curve', 'Runs excellently on older, low-spec hardware', 'Free, private, and open source', 'Stable LTS base with long-term support'],
+  },
+};
 
-renderProducts();
-updateCartUI();
+// Icon SVGs for quiz options
+const OPTION_ICONS = {
+  gaming:  `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="6" width="20" height="14" rx="3"/><path d="M8 13h2m2 0h2M13 11v2M7 9h.01M17 9h.01"/></svg>`,
+  office:  `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>`,
+  code:    `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>`,
+  casual:  `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20"/></svg>`,
+  new:     `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg>`,
+  mid:     `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>`,
+  old:     `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M8 20h8M12 16v4M2 12h20"/></svg>`,
+  mac:     `<svg viewBox="0 0 814 1000" fill="currentColor"><path d="M788.1 340.9c-5.8 4.5-108.2 62.2-108.2 190.5 0 148.4 130.3 200.9 134.2 202.2-.6 3.2-20.7 71.9-68.7 141.9-42.8 61.6-87.5 123.1-155.5 123.1s-85.5-39.5-164-39.5c-76 0-103.7 40.8-165.9 40.8s-105-57.8-155.5-127.4C46 790.7 0 663 0 541.8c0-207.2 134.4-316.9 266.5-316.9 84.4 0 154.6 55.6 207.7 55.6 50.6 0 129.2-58.8 225.3-58.8zm-234.1-134.5c29.4-34.6 50.1-82.8 50.1-131 0-6.6-.5-13.3-1.5-19.9-47.2 1.8-103.3 31.8-137.4 74.9-28.4 33.6-53.3 83.4-53.3 133.4 0 7.2 1.2 14.5 1.7 16.8 2.9.5 7.6 1.1 12.3 1.1 42.5 0 96.4-28.6 128.1-75.3z"/></svg>`,
+  beginner:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2a7 7 0 017 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 01-1 1H9a1 1 0 01-1-1v-2.26A7 7 0 0112 2z"/><path d="M9 21h6"/></svg>`,
+  inter:   `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 10-16 0"/></svg>`,
+  advanced:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>`,
+  pro:     `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>`,
+  'win-dep':`<svg viewBox="0 0 88 88" fill="#0078d4"><path d="M0 12.4l35.7-4.86.016 34.42-35.67.2zm39.9-5.4L87.9 0v41.5l-48 .38zm-4.2 38.4l.028 34.45L.038 75.094l-.01-30.08zm52.2.56L87.9 87.5l-48-6.62-.07-34.84z"/></svg>`,
+  partial: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>`,
+  web:     `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg>`,
+  free:    `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>`,
+  none:    `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/></svg>`,
+  some:    `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04"/></svg>`,
+  high:    `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`,
+  max:     `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>`,
+  gratis:  `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>`,
+  key:     `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 11-7.778 7.778 5.5 5.5 0 017.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg>`,
+  pay:     `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="1" y="4" width="22" height="16" rx="2"/><path d="M1 10h22"/></svg>`,
+  any:     `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>`,
+};
+
+// Quiz state
+let qIndex  = 0;
+const qScores = { win:0, ubu:0, mac:0, mint:0 };
+
+function renderQuestion() {
+  const Q   = QUESTIONS[qIndex];
+  const pct = Math.round((qIndex / QUESTIONS.length) * 100);
+
+  const dots = QUESTIONS.map((_, i) => {
+    const cls = i < qIndex ? 'done' : (i === qIndex ? 'active' : '');
+    return `<div class="quiz-step-dot ${cls}" aria-hidden="true"></div>`;
+  }).join('');
+
+  document.getElementById('quiz-content').innerHTML = `
+    <div class="quiz-progress-track" role="progressbar" aria-valuenow="${pct}" aria-valuemin="0" aria-valuemax="100" aria-label="Quiz progress ${pct}%">
+      <div class="quiz-progress-fill" style="width:${pct}%"></div>
+    </div>
+    <div class="quiz-step-row">
+      <span class="quiz-step-label">Question ${qIndex + 1} of ${QUESTIONS.length}</span>
+      <div class="quiz-step-dots" aria-hidden="true">${dots}</div>
+    </div>
+    <h3 class="quiz-question">${Q.q}</h3>
+    <p style="font-size:0.8rem;color:var(--text-muted);margin-bottom:1.25rem;font-family:var(--mono);letter-spacing:0.02em;">${Q.hint}</p>
+    <div class="quiz-options" role="group" aria-label="Answer options">
+      ${Q.opts.map((opt, i) => `
+        <button class="quiz-option" onclick="selectOpt(${i})" aria-label="${opt.label}">
+          <div class="quiz-option-icon" aria-hidden="true">${OPTION_ICONS[opt.icon] || OPTION_ICONS.casual}</div>
+          <span class="quiz-option-text">${opt.label}</span>
+        </button>
+      `).join('')}
+    </div>
+  `;
+
+  // Stagger entrance
+  const opts = document.querySelectorAll('.quiz-option');
+  opts.forEach((o, i) => {
+    o.style.opacity = '0';
+    o.style.transform = 'translateY(8px)';
+    setTimeout(() => {
+      o.style.transition = 'opacity 0.28s ease, transform 0.28s ease, border-color 0.2s, background 0.2s, transform 0.2s cubic-bezier(0.34,1.56,0.64,1)';
+      o.style.opacity = '1';
+      o.style.transform = '';
+    }, 60 + i * 60);
+  });
+}
+
+window.selectOpt = function(i) {
+  // Highlight selection briefly
+  const opts = document.querySelectorAll('.quiz-option');
+  if (opts[i]) opts[i].classList.add('selected');
+
+  const s = QUESTIONS[qIndex].opts[i].scores;
+  Object.keys(s).forEach(k => { qScores[k] += s[k]; });
+  qIndex++;
+
+  setTimeout(() => {
+    if (qIndex < QUESTIONS.length) {
+      renderQuestion();
+    } else {
+      showScanning();
+    }
+  }, 250);
+};
+
+function showScanning() {
+  const logLines = [
+    ['proc', '▶', 'Processing 6-factor behavioral profile…'],
+    ['ok',   '✓', 'Hardware compatibility matrix — checked'],
+    ['ok',   '✓', 'Software dependency analysis — complete'],
+    ['proc', '▶', 'Weighing privacy vs. ecosystem factors…'],
+    ['ok',   '✓', 'Cross-referencing OS feature database…'],
+    ['ok',   '✓', 'Confidence threshold exceeded'],
+    ['proc', '▶', 'Generating your personalized result…'],
+  ];
+
+  document.getElementById('quiz-content').innerHTML = `
+    <div class="quiz-scanning" aria-live="polite" aria-label="Analyzing your answers">
+      <div class="scan-spinner" aria-hidden="true"></div>
+      <div class="scan-label" aria-hidden="true">ANALYZING YOUR PROFILE</div>
+      <div class="scan-logs" id="scan-log-container" aria-hidden="true"></div>
+    </div>
+  `;
+
+  const container = document.getElementById('scan-log-container');
+  logLines.forEach((line, i) => {
+    setTimeout(() => {
+      const el = document.createElement('div');
+      el.className = 'scan-log';
+      el.style.animationDelay = '0ms';
+      el.innerHTML = `<span class="${line[0]}">${line[1]}</span> ${line[2]}`;
+      container.appendChild(el);
+    }, i * 320);
+  });
+
+  setTimeout(showResult, logLines.length * 320 + 500);
+}
+
+function showResult() {
+  const winner = Object.keys(qScores).reduce((a, b) => qScores[a] > qScores[b] ? a : b);
+  const r   = RESULTS[winner];
+  const tot = Object.values(qScores).reduce((a, b) => a + b, 0);
+  const pct = Math.round((qScores[winner] / tot) * 100);
+
+  // Save to localStorage
+  try {
+    localStorage.setItem('isohub-rec', JSON.stringify({
+      os: winner, name: r.name, ts: Date.now()
+    }));
+  } catch(e) {}
+
+  // Choose logo SVG based on winner
+  const logoSVGs = {
+    win:  `<svg width="40" height="40" viewBox="0 0 88 88" fill="none"><path d="M0 12.4l35.7-4.86.016 34.42-35.67.2zm39.9-5.4L87.9 0v41.5l-48 .38zm-4.2 38.4l.028 34.45L.038 75.094l-.01-30.08zm52.2.56L87.9 87.5l-48-6.62-.07-34.84z" fill="white"/></svg>`,
+    ubu:  `<svg width="40" height="40" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="white" opacity="0.9"/><circle cx="12" cy="12" r="2.8" fill="${r.accentColor}"/><circle cx="12" cy="4.2" r="2" fill="${r.accentColor}"/><circle cx="18.7" cy="15.8" r="2" fill="${r.accentColor}"/><circle cx="5.3" cy="15.8" r="2" fill="${r.accentColor}"/></svg>`,
+    mac:  `<svg width="36" height="40" viewBox="0 0 814 1000" fill="white"><path d="M788.1 340.9c-5.8 4.5-108.2 62.2-108.2 190.5 0 148.4 130.3 200.9 134.2 202.2-.6 3.2-20.7 71.9-68.7 141.9-42.8 61.6-87.5 123.1-155.5 123.1s-85.5-39.5-164-39.5c-76 0-103.7 40.8-165.9 40.8s-105-57.8-155.5-127.4C46 790.7 0 663 0 541.8c0-207.2 134.4-316.9 266.5-316.9 84.4 0 154.6 55.6 207.7 55.6 50.6 0 129.2-58.8 225.3-58.8zm-234.1-134.5c29.4-34.6 50.1-82.8 50.1-131 0-6.6-.5-13.3-1.5-19.9-47.2 1.8-103.3 31.8-137.4 74.9-28.4 33.6-53.3 83.4-53.3 133.4 0 7.2 1.2 14.5 1.7 16.8 2.9.5 7.6 1.1 12.3 1.1 42.5 0 96.4-28.6 128.1-75.3z"/></svg>`,
+    mint: `<svg width="40" height="40" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="white" opacity="0.9"/><circle cx="12" cy="12" r="2" fill="${r.accentColor}"/><line x1="12" y1="10" x2="12" y2="5.5" stroke="${r.accentColor}" stroke-width="1.8" stroke-linecap="round"/><path d="M12 5.5C8.4 5.5 5.5 8.4 5.5 12S8.4 18.5 12 18.5 18.5 15.6 18.5 12" stroke="${r.accentColor}" stroke-width="1.2" fill="none" stroke-linecap="round"/></svg>`,
+  };
+
+  document.getElementById('quiz-content').innerHTML = `
+    <div class="quiz-progress-track" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+      <div class="quiz-progress-fill" style="width:100%"></div>
+    </div>
+    <div class="quiz-result" aria-live="polite">
+      <div class="result-icon-ring" style="background:${r.accentColor}22;color:${r.accentColor};" aria-hidden="true">
+        ${logoSVGs[winner]}
+      </div>
+      <p class="result-eyebrow">System Recommendation</p>
+      <h3 class="result-name" style="color:${r.accentColor}">${r.name}</h3>
+      <p class="result-confidence" style="color:${r.accentColor}">
+        <span style="opacity:0.5;color:var(--text-muted)">Match confidence: </span>${pct}%
+      </p>
+      <p class="result-desc">${r.summary}</p>
+      <ul style="text-align:left;max-width:400px;margin:0 auto var(--space-6);list-style:none;display:flex;flex-direction:column;gap:var(--space-2);">
+        ${r.reasons.map(reason => `
+          <li style="display:flex;align-items:flex-start;gap:var(--space-2);font-size:0.85rem;color:var(--text-secondary);line-height:1.5;">
+            <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="${r.accentColor}" stroke-width="2.5" style="flex-shrink:0;margin-top:2px;"><path d="M5 13l4 4L19 7"/></svg>
+            ${reason}
+          </li>
+        `).join('')}
+      </ul>
+      <div class="result-actions">
+        <a class="dl-btn ${r.btnClass}" href="${r.href}">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+          Download ${r.name}
+        </a>
+        <button class="btn-retry" onclick="retakeQuiz()">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M1 4v6h6M23 20v-6h-6"/><path d="M20.49 9A9 9 0 005.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 013.51 15"/></svg>
+          Retake Quiz
+        </button>
+      </div>
+    </div>
+  `;
+}
+
+window.retakeQuiz = function() {
+  qIndex = 0;
+  Object.keys(qScores).forEach(k => { qScores[k] = 0; });
+  renderQuestion();
+};
+
+// Boot the quiz
+renderQuestion();
 </script>
 </body>
 </html>
